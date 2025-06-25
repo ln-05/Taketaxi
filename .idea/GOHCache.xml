@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="GreeterService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/../Operation/helloworld/internal/service/greeter.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/../Operation/helloworld/internal/service/greeter.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1750845216663" />
+              <option name="schema">
+                <list>
+                  <option value="GreeterService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="greeter_service" value="GreeterService" />
+      </map>
+    </option>
+    <option name="lastTimeChecked" value="1750844068601" />
+  </component>
+</project>
