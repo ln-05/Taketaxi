@@ -138,6 +138,13 @@
             </set>
           </value>
         </entry>
+        <entry key="UserServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/../bei/rpc-server/hander/user.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="greeterClient">
           <value>
             <set>
@@ -221,7 +228,7 @@
         <entry key="file://$PROJECT_DIR$/helloworld/cmd/helloworld/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1750824341837" />
+              <option name="lastModified" value="1750928235306" />
             </ScannedPath>
           </value>
         </entry>
@@ -368,6 +375,18 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/../bei/rpc-server/hander/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1750928261674" />
+              <option name="schema">
+                <list>
+                  <option value="UserServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="tableStructMapping">
@@ -393,6 +412,7 @@
         <entry key="server_http" value="Server_HTTP" />
         <entry key="unimplemented_greeter_server" value="UnimplementedGreeterServer" />
         <entry key="user" value="User" />
+        <entry key="user_server" value="UserServer" />
         <entry key="x" value="x" />
       </map>
     </option>
