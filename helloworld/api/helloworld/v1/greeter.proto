@@ -85,7 +85,7 @@ message RegisterRequest {
   string SendSmsCode = 2;
 }
 
-// 用户注册响应
+
 message RegisterReply {
   int64 Code =1;
   string Msg =2;
