@@ -1,12 +1,16 @@
 package biz
 
 import (
+	"github.com/google/wire"
 	"gorm.io/gorm"
 	"time"
 )
 
+// ProviderSet is biz providers.
+var ProviderSet = wire.NewSet(NewGreeterUsecase)
+
 type User struct {
-	Id       int64          `gorm:"column:id;type:int;primaryKey;not null;" json:"id"`
+	Id       int            `gorm:"column:id;type:int;primaryKey;not null;" json:"id"`
 	Mobile   string         `gorm:"column:mobile;type:char(11);default:NULL;" json:"mobile"`
 	UserName string         `gorm:"column:user_name;type:varchar(20);default:NULL;" json:"user_name"`
 	NickName string         `gorm:"column:nick_name;type:varchar(20);default:NULL;" json:"nick_name"`

@@ -7,15 +7,16 @@
 package main
 
 import (
+	"github.com/go-kratos/kratos/v2"
+	"github.com/go-kratos/kratos/v2/log"
 	"helloworld/internal/biz"
 	"helloworld/internal/conf"
 	"helloworld/internal/data"
 	"helloworld/internal/server"
 	"helloworld/internal/service"
+)
 
-	"github.com/go-kratos/kratos/v2"
-	"github.com/go-kratos/kratos/v2/log"
-
+import (
 	_ "go.uber.org/automaxprocs"
 )
 
@@ -23,14 +24,21 @@ import (
 
 // wireApp init kratos application.
 func wireApp(confServer *conf.Server, confData *conf.Data, logger log.Logger) (*kratos.App, func(), error) {
-	dataData, cleanup, err := data.NewData(confData, logger)
+	db, err := data.NewDB(confData, logger)
+	if err != nil {
+		return nil, nil, err
+	}
+	client, err := data.NewRedis(confData, logger)
+	if err != nil {
+		return nil, nil, err
+	}
+	dataData, cleanup, err := data.NewData(confData, logger, db, client)
 	if err != nil {
 		return nil, nil, err
 	}
 	greeterRepo := data.NewGreeterRepo(dataData, logger)
 	greeterUsecase := biz.NewGreeterUsecase(greeterRepo, logger)
-	client := data.NewRedisClient(confData)
-	greeterService := service.NewGreeterService(greeterUsecase, client, dataData.Db)
+	greeterService := service.NewGreeterService(greeterUsecase, dataData)
 	grpcServer := server.NewGRPCServer(confServer, greeterService, logger)
 	httpServer := server.NewHTTPServer(confServer, greeterService, logger)
 	app := newApp(logger, grpcServer, httpServer)

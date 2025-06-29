@@ -353,8 +353,8 @@ func (x *Data_Database) GetSource() string {
 type Data_Redis struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Network       string                 `protobuf:"bytes,1,opt,name=network,proto3" json:"network,omitempty"`
-	Addr          string                 `protobuf:"bytes,2,opt,name=addr,proto3" json:"addr,omitempty"`
-	Password      string                 `protobuf:"bytes,3,opt,name=password,proto3" json:"password,omitempty"`
+	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
+	Addr          string                 `protobuf:"bytes,3,opt,name=addr,proto3" json:"addr,omitempty"`
 	ReadTimeout   *durationpb.Duration   `protobuf:"bytes,4,opt,name=read_timeout,json=readTimeout,proto3" json:"read_timeout,omitempty"`
 	WriteTimeout  *durationpb.Duration   `protobuf:"bytes,5,opt,name=write_timeout,json=writeTimeout,proto3" json:"write_timeout,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -398,16 +398,16 @@ func (x *Data_Redis) GetNetwork() string {
 	return ""
 }
 
-func (x *Data_Redis) GetAddr() string {
+func (x *Data_Redis) GetPassword() string {
 	if x != nil {
-		return x.Addr
+		return x.Password
 	}
 	return ""
 }
 
-func (x *Data_Redis) GetPassword() string {
+func (x *Data_Redis) GetAddr() string {
 	if x != nil {
-		return x.Password
+		return x.Addr
 	}
 	return ""
 }
@@ -453,9 +453,9 @@ const file_conf_conf_proto_rawDesc = "" +
 	"\x06driver\x18\x01 \x01(\tR\x06driver\x12\x16\n" +
 	"\x06source\x18\x02 \x01(\tR\x06source\x1a\xcf\x01\n" +
 	"\x05Redis\x12\x18\n" +
-	"\anetwork\x18\x01 \x01(\tR\anetwork\x12\x12\n" +
-	"\x04addr\x18\x02 \x01(\tR\x04addr\x12\x1a\n" +
-	"\bpassword\x18\x03 \x01(\tR\bpassword\x12<\n" +
+	"\anetwork\x18\x01 \x01(\tR\anetwork\x12\x1a\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x12\n" +
+	"\x04addr\x18\x03 \x01(\tR\x04addr\x12<\n" +
 	"\fread_timeout\x18\x04 \x01(\v2\x19.google.protobuf.DurationR\vreadTimeout\x12>\n" +
 	"\rwrite_timeout\x18\x05 \x01(\v2\x19.google.protobuf.DurationR\fwriteTimeoutB\x1fZ\x1dhelloworld/internal/conf;confb\x06proto3"
 

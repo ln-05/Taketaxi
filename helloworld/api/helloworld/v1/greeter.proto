@@ -1,40 +1,3 @@
-//syntax = "proto3";
-//
-//package helloworld.v1;
-//
-//import "google/api/annotations.proto";
-//
-//option go_package = "helloworld/api/helloworld/v1;v1";
-//option java_multiple_files = true;
-//option java_package = "dev.kratos.api.helloworld.v1";
-//option java_outer_classname = "HelloworldProtoV1";
-//
-//// The greeting service definition.
-//service Greeter {
-//  // Sends a greeting
-//
-//  rpc RegisterUser (RegisterRequest) returns (RegisterReply) {
-//    option (google.api.http) = {
-//      post: "/user/register"
-//      body: "*"
-//    };
-//  }
-//
-//}
-//
-//// The request message containing the user's name.
-//message RegisterRequest {
-//  string username = 1;
-//  string password = 2;
-//}
-//
-//// The response message containing the greetings
-//message RegisterReply {
-//  int64 id = 1;
-//}
-
-
-
 syntax = "proto3";
 
 package helloworld.v1;
@@ -48,46 +11,44 @@ option java_outer_classname = "HelloworldProtoV1";
 
 // The greeting service definition.
 service Greeter {
+  // Sends a greeting
+  rpc SendSms (SendSmsRequest) returns (SendSmsReply) {
+    option (google.api.http) = {
+      post: "/user/sendSms"
+      body: "*"
+    };
+  }
 
-  rpc SendSms (SendSmsRequest) returns (SendSmsReply){
-        option (google.api.http) = {
-          post: "/user/sensSms"
-          body: "*"
-        };
-      }
-
-
-  rpc Register (RegisterRequest) returns (RegisterReply){
-        option (google.api.http) = {
-          post: "/user/register"
-          body: "*"
-        };
-      }
+  rpc Login (LoginRequest) returns (LoginReply) {
+    option (google.api.http) = {
+      post: "/user/login"
+      body: "*"
+    };
+  }
 
 }
-//发送验证码
+
+// The request message containing the user's name.
 message SendSmsRequest {
-  string mobile = 1;
-  string SendSmsCode = 2;
+  string mobile=1;
+  string SendSmsCode=2;
 }
 
-// 用户注册响应
+// The response message containing the greetings
 message SendSmsReply {
-  int64 Code =1;
-  string Msg = 2;
-
+  int64 code = 1;
+  string message = 2;
 }
 
 
-// 注册登录
-message RegisterRequest {
-  string mobile = 1;
-  string SendSmsCode = 2;
+message LoginRequest {
+  string mobile=1;
+  string SendSmsCode=2;
 }
 
-
-message RegisterReply {
-  int64 Code =1;
-  string Msg =2;
-  string Token =3;
+// The response message containing the greetings
+message LoginReply {
+  int64 code = 1;
+  string message = 2;
+  string token = 3;
 }

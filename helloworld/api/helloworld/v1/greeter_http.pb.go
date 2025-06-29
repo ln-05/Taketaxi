@@ -19,18 +19,19 @@ var _ = binding.EncodeURL
 
 const _ = http.SupportPackageIsVersion1
 
-const OperationGreeterRegister = "/helloworld.v1.Greeter/Register"
+const OperationGreeterLogin = "/helloworld.v1.Greeter/Login"
 const OperationGreeterSendSms = "/helloworld.v1.Greeter/SendSms"
 
 type GreeterHTTPServer interface {
-	Register(context.Context, *RegisterRequest) (*RegisterReply, error)
+	Login(context.Context, *LoginRequest) (*LoginReply, error)
+	// SendSms Sends a greeting
 	SendSms(context.Context, *SendSmsRequest) (*SendSmsReply, error)
 }
 
 func RegisterGreeterHTTPServer(s *http.Server, srv GreeterHTTPServer) {
 	r := s.Route("/")
-	r.POST("/user/sensSms", _Greeter_SendSms0_HTTP_Handler(srv))
-	r.POST("/user/register", _Greeter_Register0_HTTP_Handler(srv))
+	r.POST("/user/sendSms", _Greeter_SendSms0_HTTP_Handler(srv))
+	r.POST("/user/login", _Greeter_Login0_HTTP_Handler(srv))
 }
 
 func _Greeter_SendSms0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
@@ -55,30 +56,30 @@ func _Greeter_SendSms0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context
 	}
 }
 
-func _Greeter_Register0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
+func _Greeter_Login0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in RegisterRequest
+		var in LoginRequest
 		if err := ctx.Bind(&in); err != nil {
 			return err
 		}
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, OperationGreeterRegister)
+		http.SetOperation(ctx, OperationGreeterLogin)
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.Register(ctx, req.(*RegisterRequest))
+			return srv.Login(ctx, req.(*LoginRequest))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*RegisterReply)
+		reply := out.(*LoginReply)
 		return ctx.Result(200, reply)
 	}
 }
 
 type GreeterHTTPClient interface {
-	Register(ctx context.Context, req *RegisterRequest, opts ...http.CallOption) (rsp *RegisterReply, err error)
+	Login(ctx context.Context, req *LoginRequest, opts ...http.CallOption) (rsp *LoginReply, err error)
 	SendSms(ctx context.Context, req *SendSmsRequest, opts ...http.CallOption) (rsp *SendSmsReply, err error)
 }
 
@@ -90,11 +91,11 @@ func NewGreeterHTTPClient(client *http.Client) GreeterHTTPClient {
 	return &GreeterHTTPClientImpl{client}
 }
 
-func (c *GreeterHTTPClientImpl) Register(ctx context.Context, in *RegisterRequest, opts ...http.CallOption) (*RegisterReply, error) {
-	var out RegisterReply
-	pattern := "/user/register"
+func (c *GreeterHTTPClientImpl) Login(ctx context.Context, in *LoginRequest, opts ...http.CallOption) (*LoginReply, error) {
+	var out LoginReply
+	pattern := "/user/login"
 	path := binding.EncodeURL(pattern, in, false)
-	opts = append(opts, http.Operation(OperationGreeterRegister))
+	opts = append(opts, http.Operation(OperationGreeterLogin))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
 	if err != nil {
@@ -105,7 +106,7 @@ func (c *GreeterHTTPClientImpl) Register(ctx context.Context, in *RegisterReques
 
 func (c *GreeterHTTPClientImpl) SendSms(ctx context.Context, in *SendSmsRequest, opts ...http.CallOption) (*SendSmsReply, error) {
 	var out SendSmsReply
-	pattern := "/user/sensSms"
+	pattern := "/user/sendSms"
 	path := binding.EncodeURL(pattern, in, false)
 	opts = append(opts, http.Operation(OperationGreeterSendSms))
 	opts = append(opts, http.PathTemplate(pattern))
