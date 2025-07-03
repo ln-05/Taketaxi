@@ -2,7 +2,6 @@ package data
 
 import (
 	"context"
-	"helloworld/internal/biz"
 	"helloworld/internal/conf"
 
 	"gorm.io/gorm"
@@ -46,7 +45,6 @@ func NewData(c *conf.Data, logger log.Logger, db *gorm.DB, rdb *redis.Client) (*
 
 // NewDB 创建数据库连接
 func NewDB(c *conf.Data, logger log.Logger) (*gorm.DB, error) {
-	log.NewHelper(logger).Infof("connecting to database: %s", c.Database.Source)
 
 	db, err := gorm.Open(mysql.Open(c.Database.Source), &gorm.Config{})
 	if err != nil {
@@ -63,21 +61,12 @@ func NewDB(c *conf.Data, logger log.Logger) (*gorm.DB, error) {
 	sqlDB.SetMaxIdleConns(10)
 	sqlDB.SetMaxOpenConns(100)
 
-	// 自动迁移表结构
-	err = db.AutoMigrate(&biz.User{})
-	if err != nil {
-		log.NewHelper(logger).Warnf("auto migrate failed: %v", err)
-	} else {
-		log.NewHelper(logger).Info("auto migrate completed")
-	}
-
-	log.NewHelper(logger).Info("database connected successfully")
+	log.NewHelper(logger).Info("mysql连接成功")
 	return db, nil
 }
 
 // NewRedis 创建 Redis 连接
 func NewRedis(c *conf.Data, logger log.Logger) (*redis.Client, error) {
-	log.NewHelper(logger).Infof("connecting to redis: %s", c.Redis.Addr)
 
 	rdb := redis.NewClient(&redis.Options{
 		Addr:         c.Redis.Addr,

@@ -26,6 +26,7 @@ service Greeter {
     };
   }
 
+
 }
 
 // The request message containing the user's name.
@@ -52,3 +53,4 @@ message LoginReply {
   string message = 2;
   string token = 3;
 }
+
