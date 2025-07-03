@@ -1,0 +1,83 @@
+# Generated with protoc-gen-openapi
+# https://github.com/google/gnostic/tree/master/cmd/protoc-gen-openapi
+
+openapi: 3.0.3
+info:
+    title: Greeter API
+    description: The greeting service definition.
+    version: 0.0.1
+paths:
+    /user/login:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_Login
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.LoginRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.LoginReply'
+    /user/sendSms:
+        post:
+            tags:
+                - Greeter
+            description: Sends a greeting
+            operationId: Greeter_SendSms
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.SendSmsRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.SendSmsReply'
+components:
+    schemas:
+        helloworld.v1.LoginReply:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+                token:
+                    type: string
+            description: The response message containing the greetings
+        helloworld.v1.LoginRequest:
+            type: object
+            properties:
+                mobile:
+                    type: string
+                SendSmsCode:
+                    type: string
+        helloworld.v1.SendSmsReply:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+            description: The response message containing the greetings
+        helloworld.v1.SendSmsRequest:
+            type: object
+            properties:
+                mobile:
+                    type: string
+                SendSmsCode:
+                    type: string
+            description: The request message containing the user's name.
+tags:
+    - name: Greeter
