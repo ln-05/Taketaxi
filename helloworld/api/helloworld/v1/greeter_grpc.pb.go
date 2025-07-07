@@ -19,19 +19,28 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Greeter_SendSms_FullMethodName = "/helloworld.v1.Greeter/SendSms"
-	Greeter_Login_FullMethodName   = "/helloworld.v1.Greeter/Login"
+	Greeter_SendSms_FullMethodName        = "/helloworld.v1.Greeter/SendSms"
+	Greeter_Login_FullMethodName          = "/helloworld.v1.Greeter/Login"
+	Greeter_UpdateUser_FullMethodName     = "/helloworld.v1.Greeter/UpdateUser"
+	Greeter_InfoUser_FullMethodName       = "/helloworld.v1.Greeter/InfoUser"
+	Greeter_RealName_FullMethodName       = "/helloworld.v1.Greeter/RealName"
+	Greeter_DriverRegister_FullMethodName = "/helloworld.v1.Greeter/DriverRegister"
+	Greeter_DriverStatus_FullMethodName   = "/helloworld.v1.Greeter/DriverStatus"
+	Greeter_AddressList_FullMethodName    = "/helloworld.v1.Greeter/AddressList"
 )
 
 // GreeterClient is the client API for Greeter service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-//
-// The greeting service definition.
 type GreeterClient interface {
-	// Sends a greeting
 	SendSms(ctx context.Context, in *SendSmsRequest, opts ...grpc.CallOption) (*SendSmsReply, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error)
+	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserReply, error)
+	InfoUser(ctx context.Context, in *InfoUserRequest, opts ...grpc.CallOption) (*InfoUserReply, error)
+	RealName(ctx context.Context, in *RealNameRequest, opts ...grpc.CallOption) (*RealNameReply, error)
+	DriverRegister(ctx context.Context, in *DriverRegisterRequest, opts ...grpc.CallOption) (*DriverRegisterReply, error)
+	DriverStatus(ctx context.Context, in *DriverStatusRequest, opts ...grpc.CallOption) (*DriverStatusReply, error)
+	AddressList(ctx context.Context, in *AddressListRequest, opts ...grpc.CallOption) (*AddressListReply, error)
 }
 
 type greeterClient struct {
@@ -62,15 +71,78 @@ func (c *greeterClient) Login(ctx context.Context, in *LoginRequest, opts ...grp
 	return out, nil
 }
 
+func (c *greeterClient) UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateUserReply)
+	err := c.cc.Invoke(ctx, Greeter_UpdateUser_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) InfoUser(ctx context.Context, in *InfoUserRequest, opts ...grpc.CallOption) (*InfoUserReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(InfoUserReply)
+	err := c.cc.Invoke(ctx, Greeter_InfoUser_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) RealName(ctx context.Context, in *RealNameRequest, opts ...grpc.CallOption) (*RealNameReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RealNameReply)
+	err := c.cc.Invoke(ctx, Greeter_RealName_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) DriverRegister(ctx context.Context, in *DriverRegisterRequest, opts ...grpc.CallOption) (*DriverRegisterReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DriverRegisterReply)
+	err := c.cc.Invoke(ctx, Greeter_DriverRegister_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) DriverStatus(ctx context.Context, in *DriverStatusRequest, opts ...grpc.CallOption) (*DriverStatusReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DriverStatusReply)
+	err := c.cc.Invoke(ctx, Greeter_DriverStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) AddressList(ctx context.Context, in *AddressListRequest, opts ...grpc.CallOption) (*AddressListReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddressListReply)
+	err := c.cc.Invoke(ctx, Greeter_AddressList_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GreeterServer is the server API for Greeter service.
 // All implementations must embed UnimplementedGreeterServer
 // for forward compatibility.
-//
-// The greeting service definition.
 type GreeterServer interface {
-	// Sends a greeting
 	SendSms(context.Context, *SendSmsRequest) (*SendSmsReply, error)
 	Login(context.Context, *LoginRequest) (*LoginReply, error)
+	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserReply, error)
+	InfoUser(context.Context, *InfoUserRequest) (*InfoUserReply, error)
+	RealName(context.Context, *RealNameRequest) (*RealNameReply, error)
+	DriverRegister(context.Context, *DriverRegisterRequest) (*DriverRegisterReply, error)
+	DriverStatus(context.Context, *DriverStatusRequest) (*DriverStatusReply, error)
+	AddressList(context.Context, *AddressListRequest) (*AddressListReply, error)
 	mustEmbedUnimplementedGreeterServer()
 }
 
@@ -86,6 +158,24 @@ func (UnimplementedGreeterServer) SendSms(context.Context, *SendSmsRequest) (*Se
 }
 func (UnimplementedGreeterServer) Login(context.Context, *LoginRequest) (*LoginReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+}
+func (UnimplementedGreeterServer) UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
+}
+func (UnimplementedGreeterServer) InfoUser(context.Context, *InfoUserRequest) (*InfoUserReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InfoUser not implemented")
+}
+func (UnimplementedGreeterServer) RealName(context.Context, *RealNameRequest) (*RealNameReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RealName not implemented")
+}
+func (UnimplementedGreeterServer) DriverRegister(context.Context, *DriverRegisterRequest) (*DriverRegisterReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DriverRegister not implemented")
+}
+func (UnimplementedGreeterServer) DriverStatus(context.Context, *DriverStatusRequest) (*DriverStatusReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DriverStatus not implemented")
+}
+func (UnimplementedGreeterServer) AddressList(context.Context, *AddressListRequest) (*AddressListReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddressList not implemented")
 }
 func (UnimplementedGreeterServer) mustEmbedUnimplementedGreeterServer() {}
 func (UnimplementedGreeterServer) testEmbeddedByValue()                 {}
@@ -144,6 +234,114 @@ func _Greeter_Login_Handler(srv interface{}, ctx context.Context, dec func(inter
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Greeter_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).UpdateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_UpdateUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).UpdateUser(ctx, req.(*UpdateUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_InfoUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InfoUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).InfoUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_InfoUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).InfoUser(ctx, req.(*InfoUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_RealName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RealNameRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).RealName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_RealName_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).RealName(ctx, req.(*RealNameRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_DriverRegister_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DriverRegisterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).DriverRegister(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_DriverRegister_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).DriverRegister(ctx, req.(*DriverRegisterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_DriverStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DriverStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).DriverStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_DriverStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).DriverStatus(ctx, req.(*DriverStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_AddressList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddressListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).AddressList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_AddressList_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).AddressList(ctx, req.(*AddressListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Greeter_ServiceDesc is the grpc.ServiceDesc for Greeter service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -158,6 +356,30 @@ var Greeter_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Login",
 			Handler:    _Greeter_Login_Handler,
+		},
+		{
+			MethodName: "UpdateUser",
+			Handler:    _Greeter_UpdateUser_Handler,
+		},
+		{
+			MethodName: "InfoUser",
+			Handler:    _Greeter_InfoUser_Handler,
+		},
+		{
+			MethodName: "RealName",
+			Handler:    _Greeter_RealName_Handler,
+		},
+		{
+			MethodName: "DriverRegister",
+			Handler:    _Greeter_DriverRegister_Handler,
+		},
+		{
+			MethodName: "DriverStatus",
+			Handler:    _Greeter_DriverStatus_Handler,
+		},
+		{
+			MethodName: "AddressList",
+			Handler:    _Greeter_AddressList_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

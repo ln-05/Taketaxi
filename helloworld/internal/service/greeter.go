@@ -3,14 +3,13 @@ package service
 import (
 	"context"
 	"fmt"
+	v1 "helloworld/api/helloworld/v1"
+	"helloworld/internal/biz"
 	"helloworld/internal/data"
 	"helloworld/pkg"
 	"log"
-	"regexp"
-
-	v1 "helloworld/api/helloworld/v1"
-	"helloworld/internal/biz"
 	"math/rand"
+	"regexp"
 	"time"
 )
 
@@ -90,10 +89,10 @@ func (c *GreeterService) Login(_ context.Context, in *v1.LoginRequest) (*v1.Logi
 	if get.Val() != in.SendSmsCode {
 		return nil, fmt.Errorf("验证码错误")
 	}
-	// 5.验证成功后，删除验证码
+
 	c.db.GetRedis().Del(context.Background(), "SendSms"+in.Mobile)
 
-	token, _ := pkg.NewJWT("2210a").CreateToken(pkg.CustomClaims{
+	token, _ := pkg.NewJWT("2211a").CreateToken(pkg.CustomClaims{
 		ID: uint(user.Id),
 	})
 
@@ -101,5 +100,114 @@ func (c *GreeterService) Login(_ context.Context, in *v1.LoginRequest) (*v1.Logi
 		Code:    200,
 		Message: "登录成功",
 		Token:   token,
+	}, nil
+}
+
+func (c *GreeterService) UpdateUser(ctx context.Context, in *v1.UpdateUserRequest) (*v1.UpdateUserReply, error) {
+
+	var user biz.User
+	if err := c.db.GetDB().Where("id = ?", in.Id).Find(&user).Error; err != nil {
+		return &v1.UpdateUserReply{
+			Code:    500,
+			Message: "用户不存在",
+		}, nil
+	}
+
+	users := biz.User{
+		Id:       int32(in.Id),
+		Mobile:   in.Mobile,
+		NickName: in.NickName,
+		Sex:      in.Sex,
+	}
+	if !isValidMobile(in.Mobile) {
+		return &v1.UpdateUserReply{
+			Code:    500,
+			Message: "手机号格式错误",
+		}, nil
+	}
+
+	if !pkg.TextCensor(in.NickName) {
+		return &v1.UpdateUserReply{
+			Code:    500,
+			Message: "昵称含有违规词",
+		}, nil
+	}
+
+	if err := c.db.GetDB().Model(&user).Updates(&users).Error; err != nil {
+		return &v1.UpdateUserReply{
+			Code:    500,
+			Message: "完善信息失败",
+		}, nil
+	}
+
+	return &v1.UpdateUserReply{
+		Code:    200,
+		Message: "完善信息成功",
+	}, nil
+}
+
+func (c *GreeterService) InfoUser(ctx context.Context, in *v1.InfoUserRequest) (*v1.InfoUserReply, error) {
+	var user biz.User
+	if err := c.db.GetDB().Where("id = ?", in.Id).Find(&user).Error; err != nil {
+		return &v1.InfoUserReply{
+			Code:    500,
+			Message: "用户不存在",
+		}, nil
+	}
+
+	var users biz.User
+
+	if err := c.db.GetDB().Find(&users).Error; err != nil {
+		return &v1.InfoUserReply{
+			Code:    500,
+			Message: "个人信息展示失败",
+		}, nil
+	}
+
+	return &v1.InfoUserReply{
+		Code:    200,
+		Message: "个人信息展示成功",
+		Info: []*v1.Data{
+			{
+				Mobile:   user.Mobile,
+				UserName: user.UserName,
+				NickName: user.NickName,
+				Sex:      user.Sex,
+			},
+		},
+	}, nil
+
+}
+
+func (c *GreeterService) RealName(ctx context.Context, in *v1.RealNameRequest) (*v1.RealNameReply, error) {
+
+	if in.UserId == 0 || in.RealName == "" || in.IdCard == "" {
+		return &v1.RealNameReply{
+			Code:    500,
+			Message: "参数不能为空",
+		}, nil
+	}
+
+	var user biz.User
+	err := c.db.GetDB().Where("id = ?", in.UserId).First(&user).Error
+	if err != nil {
+		return &v1.RealNameReply{
+			Code:    500,
+			Message: "用户不存在",
+		}, nil
+	}
+
+	name := pkg.Realname(in.RealName, in.IdCard)
+
+	if err := c.db.GetDB().Model(&user).Updates(name).Error; err != nil {
+		return &v1.RealNameReply{
+			Code:    500,
+			Message: "实名认证失败",
+		}, nil
+	}
+
+	return &v1.RealNameReply{
+		Code:    200,
+		Message: "实名认证成功",
 	}, nil
 }

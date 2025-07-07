@@ -351,6 +351,7 @@
             <span>周报</span>
           </div>
         </div>
+        <button class="logout-btn" @click="logout">退出登录</button>
       </div>
       <!-- 会员卡片 -->
       <div class="mine-vip-card">
@@ -693,7 +694,12 @@ export default {
     },
     nextStep() {
       console.log('点击了下一步');
-    }
+    },
+    logout() {
+      localStorage.removeItem('userPhone');
+      this.userPhone = '';
+      uni.redirectTo({ url: '/pages/index/index' });
+    },
   }
 }
 </script>
@@ -2150,5 +2156,20 @@ body, html {
 .mine-bottom-logo img {
   width: 28px;
   height: 28px;
+}
+.logout-btn {
+  margin-left: 20px;
+  padding: 8px 18px;
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255,77,79,0.08);
+  transition: background 0.2s;
+}
+.logout-btn:hover {
+  background: #d9363e;
 }
 </style> 

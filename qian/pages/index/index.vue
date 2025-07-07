@@ -36,7 +36,7 @@
 		<view v-if="showQrcode" class="qrcode-modal">
 			<view class="qrcode-modal-mask" @click="closeQrcode"></view>
 			<view class="qrcode-modal-content">
-				<image class="qrcode-img" src="http://localhost:8080/wechat/login_qrcode" mode="aspectFit" />
+				<image class="qrcode-img" src="http://127.0.0.1:8080/wechat/login_qrcode" mode="aspectFit" />
 				<view class="qrcode-close-btn" @click="closeQrcode">关闭</view>
 			</view>
 		</view>
@@ -100,7 +100,7 @@
 
 <style scoped>
 	.container {
-		background: #fff;
+		background: #ffffff;
 		min-height: 100vh;
 		padding: 0 5vw;
 		box-sizing: border-box;

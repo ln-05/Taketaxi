@@ -38,7 +38,7 @@ go get github.com/google/wire/cmd/wire
 # generate wire
 cd cmd/server
 wire
-```
+```[README.md](../README.md)
 
 ## Docker
 ```bash

@@ -9,9 +9,7 @@ option java_multiple_files = true;
 option java_package = "dev.kratos.api.helloworld.v1";
 option java_outer_classname = "HelloworldProtoV1";
 
-// The greeting service definition.
 service Greeter {
-  // Sends a greeting
   rpc SendSms (SendSmsRequest) returns (SendSmsReply) {
     option (google.api.http) = {
       post: "/user/sendSms"
@@ -25,17 +23,53 @@ service Greeter {
       body: "*"
     };
   }
+  rpc UpdateUser (UpdateUserRequest) returns (UpdateUserReply) {
+    option (google.api.http) = {
+      post: "/user/updateUser"
+      body: "*"
+    };
+  }
+  rpc InfoUser (InfoUserRequest) returns (InfoUserReply) {
+    option (google.api.http) = {
+      post: "/user/infoUser"
+      body: "*"
+    };
+  }
+  rpc RealName (RealNameRequest) returns (RealNameReply) {
+    option (google.api.http) = {
+      get: "/user/realName"
+    };
+  }
+
+  rpc DriverRegister (DriverRegisterRequest) returns (DriverRegisterReply) {
+    option (google.api.http) = {
+      post: "/driver/driverRegister"
+      body: "*"
+    };
+  }
+
+  rpc DriverStatus (DriverStatusRequest) returns (DriverStatusReply) {
+    option (google.api.http) = {
+      post: "/driver/driverStatus"
+      body: "*"
+    };
+  }
+
+  rpc AddressList (AddressListRequest) returns (AddressListReply) {
+    option (google.api.http) = {
+      post: "/map/addressList"
+      body: "*"
+    };
+  }
 
 
 }
 
-// The request message containing the user's name.
 message SendSmsRequest {
   string mobile=1;
   string SendSmsCode=2;
 }
 
-// The response message containing the greetings
 message SendSmsReply {
   int64 code = 1;
   string message = 2;
@@ -47,10 +81,91 @@ message LoginRequest {
   string SendSmsCode=2;
 }
 
-// The response message containing the greetings
 message LoginReply {
   int64 code = 1;
   string message = 2;
   string token = 3;
+}
+
+message UpdateUserRequest {
+ int64  id=1;
+ string mobile=2;
+ string nickName=3;
+ string sex=4;
+}
+
+message UpdateUserReply {
+  int64 code = 1;
+  string message = 2;
+}
+
+message InfoUserRequest {
+  int64  id=1;
+}
+
+message InfoUserReply {
+  int64 code=1;
+  string message= 2;
+  repeated Data info=3;
+}
+message Data {
+  string mobile=1;
+  string userName=2;
+  string nickName=3;
+  string sex=4;
+}
+
+
+message RealNameRequest {
+  int64  user_id=1;
+  string real_name=2;
+  string id_card=3;
+}
+
+message RealNameReply {
+  int64 code=1;
+  string message= 2;
+}
+
+
+message DriverRegisterRequest {
+  int32 user_id = 1;
+  string id_card = 2;
+}
+
+message DriverRegisterReply {
+  int64 code=1;
+  string message= 2;
+}
+
+message DriverStatusRequest {
+  int32 id = 1;
+  int64 online_status = 2;
+}
+
+message DriverStatusReply {
+  int64 code=1;
+  string message= 2;
+}
+
+
+message AddressListRequest {
+  int64 page = 1;
+  int64 size = 2;
+  string province=3;
+  string city=4;
+  string district=5;
+}
+
+message AddressListReply {
+  repeated AddressList list=1;
+}
+
+message AddressList {
+  string address=1;
+  string province=2;
+  string city=3;
+  string district=4;
+  string tel=5;
 }
 

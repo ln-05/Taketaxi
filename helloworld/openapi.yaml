@@ -4,9 +4,80 @@
 openapi: 3.0.3
 info:
     title: Greeter API
-    description: The greeting service definition.
     version: 0.0.1
 paths:
+    /driver/driverRegister:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_DriverRegister
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.DriverRegisterRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.DriverRegisterReply'
+    /driver/driverStatus:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_DriverStatus
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.DriverStatusRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.DriverStatusReply'
+    /map/addressList:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_AddressList
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.AddressListRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.AddressListReply'
+    /user/infoUser:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_InfoUser
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.InfoUserRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.InfoUserReply'
     /user/login:
         post:
             tags:
@@ -25,11 +96,35 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/helloworld.v1.LoginReply'
+    /user/realName:
+        get:
+            tags:
+                - Greeter
+            operationId: Greeter_RealName
+            parameters:
+                - name: userId
+                  in: query
+                  schema:
+                    type: string
+                - name: realName
+                  in: query
+                  schema:
+                    type: string
+                - name: idCard
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.RealNameReply'
     /user/sendSms:
         post:
             tags:
                 - Greeter
-            description: Sends a greeting
             operationId: Greeter_SendSms
             requestBody:
                 content:
@@ -44,8 +139,116 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/helloworld.v1.SendSmsReply'
+    /user/updateUser:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_UpdateUser
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.UpdateUserRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.UpdateUserReply'
 components:
     schemas:
+        helloworld.v1.AddressList:
+            type: object
+            properties:
+                address:
+                    type: string
+                province:
+                    type: string
+                city:
+                    type: string
+                district:
+                    type: string
+                tel:
+                    type: string
+        helloworld.v1.AddressListReply:
+            type: object
+            properties:
+                list:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/helloworld.v1.AddressList'
+        helloworld.v1.AddressListRequest:
+            type: object
+            properties:
+                page:
+                    type: string
+                size:
+                    type: string
+                province:
+                    type: string
+                city:
+                    type: string
+                district:
+                    type: string
+        helloworld.v1.Data:
+            type: object
+            properties:
+                mobile:
+                    type: string
+                userName:
+                    type: string
+                nickName:
+                    type: string
+                sex:
+                    type: string
+        helloworld.v1.DriverRegisterReply:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+        helloworld.v1.DriverRegisterRequest:
+            type: object
+            properties:
+                userId:
+                    type: integer
+                    format: int32
+                idCard:
+                    type: string
+        helloworld.v1.DriverStatusReply:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+        helloworld.v1.DriverStatusRequest:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: int32
+                onlineStatus:
+                    type: string
+        helloworld.v1.InfoUserReply:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+                info:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/helloworld.v1.Data'
+        helloworld.v1.InfoUserRequest:
+            type: object
+            properties:
+                id:
+                    type: string
         helloworld.v1.LoginReply:
             type: object
             properties:
@@ -55,13 +258,19 @@ components:
                     type: string
                 token:
                     type: string
-            description: The response message containing the greetings
         helloworld.v1.LoginRequest:
             type: object
             properties:
                 mobile:
                     type: string
                 SendSmsCode:
+                    type: string
+        helloworld.v1.RealNameReply:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
                     type: string
         helloworld.v1.SendSmsReply:
             type: object
@@ -70,7 +279,6 @@ components:
                     type: string
                 message:
                     type: string
-            description: The response message containing the greetings
         helloworld.v1.SendSmsRequest:
             type: object
             properties:
@@ -78,6 +286,23 @@ components:
                     type: string
                 SendSmsCode:
                     type: string
-            description: The request message containing the user's name.
+        helloworld.v1.UpdateUserReply:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+        helloworld.v1.UpdateUserRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                mobile:
+                    type: string
+                nickName:
+                    type: string
+                sex:
+                    type: string
 tags:
     - name: Greeter
