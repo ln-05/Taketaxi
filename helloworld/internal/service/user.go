@@ -11,6 +11,8 @@ import (
 	"math/rand"
 	"regexp"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 // GreeterService is a greeter service.
@@ -34,6 +36,7 @@ func isValidMobile(mobile string) bool {
 	return re.MatchString(mobile)
 }
 
+// 发送验证码
 func (c *GreeterService) SendSms(_ context.Context, in *v1.SendSmsRequest) (*v1.SendSmsReply, error) {
 
 	if !isValidMobile(in.Mobile) {
@@ -59,6 +62,7 @@ func (c *GreeterService) SendSms(_ context.Context, in *v1.SendSmsRequest) (*v1.
 	}, nil
 }
 
+// 登录
 func (c *GreeterService) Login(_ context.Context, in *v1.LoginRequest) (*v1.LoginReply, error) {
 
 	if !isValidMobile(in.Mobile) {
@@ -103,7 +107,8 @@ func (c *GreeterService) Login(_ context.Context, in *v1.LoginRequest) (*v1.Logi
 	}, nil
 }
 
-func (c *GreeterService) UpdateUser(ctx context.Context, in *v1.UpdateUserRequest) (*v1.UpdateUserReply, error) {
+// 完善用户信息
+func (c *GreeterService) UpdateUser(_ context.Context, in *v1.UpdateUserRequest) (*v1.UpdateUserReply, error) {
 
 	var user biz.User
 	if err := c.db.GetDB().Where("id = ?", in.Id).Find(&user).Error; err != nil {
@@ -146,7 +151,8 @@ func (c *GreeterService) UpdateUser(ctx context.Context, in *v1.UpdateUserReques
 	}, nil
 }
 
-func (c *GreeterService) InfoUser(ctx context.Context, in *v1.InfoUserRequest) (*v1.InfoUserReply, error) {
+// 查看个人主页信息
+func (c *GreeterService) InfoUser(_ context.Context, in *v1.InfoUserRequest) (*v1.InfoUserReply, error) {
 	var user biz.User
 	if err := c.db.GetDB().Where("id = ?", in.Id).Find(&user).Error; err != nil {
 		return &v1.InfoUserReply{
@@ -179,8 +185,10 @@ func (c *GreeterService) InfoUser(ctx context.Context, in *v1.InfoUserRequest) (
 
 }
 
-func (c *GreeterService) RealName(ctx context.Context, in *v1.RealNameRequest) (*v1.RealNameReply, error) {
+// 实名认证
+func (c *GreeterService) RealName(_ context.Context, in *v1.RealNameRequest) (*v1.RealNameReply, error) {
 
+	log.Printf("请求参数 - UserID: %d, RealName: '%s', IdCard: '%s'", in.UserId, in.RealName, in.IdCard)
 	if in.UserId == 0 || in.RealName == "" || in.IdCard == "" {
 		return &v1.RealNameReply{
 			Code:    500,
@@ -209,5 +217,87 @@ func (c *GreeterService) RealName(ctx context.Context, in *v1.RealNameRequest) (
 	return &v1.RealNameReply{
 		Code:    200,
 		Message: "实名认证成功",
+	}, nil
+}
+
+// 创建行程，生成订单
+func (c *GreeterService) CreateTrip(_ context.Context, in *v1.CreateTripRequest) (*v1.CreateTripReply, error) {
+
+	t := time.Now()
+
+	ak := "ODwx6VDM3kts8QIsalQt0btSCEIBte20"
+	origin := fmt.Sprintf("%f,%f", in.StartLat, in.StartLng)
+	destination := fmt.Sprintf("%f,%f", in.EndLat, in.EndLng)
+
+	distance, err := pkg.GetBaiduRouteDistance(origin, destination, ak)
+	if err != nil || distance == 0 {
+		distance = 10000 // 回退为10公里
+	}
+	price := 10.0 + float64(distance)/1000*2.5
+
+	trip := &biz.Trip{
+		UserId:            in.UserId,
+		StartLng:          in.StartLng,
+		StartLat:          in.StartLat,
+		EndLng:            in.EndLng,
+		EndLat:            in.EndLat,
+		StartAddress:      in.StartAddr,
+		EndAddress:        in.EndAddr,
+		VehicleType:       1,
+		EstimatedDistance: uint32(distance),
+		ActualDistance:    0,
+		TotalFare:         price,
+		CreateTime:        t,
+	}
+	if err := c.db.GetDB().Create(trip).Error; err != nil {
+		return nil, fmt.Errorf("创建行程失败: %v", err)
+	}
+
+	newString := uuid.NewString()
+
+	order := &biz.LxhOrder{
+		OrderCode:   newString,
+		PassengerId: int32(in.UserId),
+		StartAddr:   in.StartAddr,
+		EndEnd:      in.EndAddr,
+		OrderStatus: "待派单",
+		OrderType:   "快车",
+		Amount:      price,
+		StartTime:   t,
+	}
+	if err := c.db.GetDB().Create(order).Error; err != nil {
+		return nil, fmt.Errorf("创建订单失败")
+	}
+
+	return &v1.CreateTripReply{
+		TripId:      int64(trip.Id),
+		OrderCode:   newString,
+		Price:       price,
+		OrderStatus: order.OrderStatus,
+	}, nil
+}
+
+// 支付
+func (c *GreeterService) PayOrder(ctx context.Context, in *v1.PayOrderRequest) (*v1.PayOrderReply, error) {
+	var order biz.LxhOrder
+	if err := c.db.GetDB().Where("id = ?", in.Id).First(&order).Error; err != nil {
+		return &v1.PayOrderReply{
+			Code: 404,
+			Msg:  "订单不存在",
+		}, nil
+	}
+
+	payURL := pkg.AliPay(order.OrderCode, order.OrderCode, fmt.Sprintf("%.2f", order.Amount), "QUICK_WAP_WAY")
+	if payURL == "" {
+		return &v1.PayOrderReply{
+			Code: 500,
+			Msg:  "生成支付链接失败",
+		}, nil
+	}
+
+	return &v1.PayOrderReply{
+		Code:   200,
+		Msg:    "生成支付链接成功",
+		PayUrl: payURL,
 	}, nil
 }

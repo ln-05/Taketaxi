@@ -60,7 +60,6 @@ func NewDB(c *conf.Data, logger log.Logger) (*gorm.DB, error) {
 	// 设置连接池参数
 	sqlDB.SetMaxIdleConns(10)
 	sqlDB.SetMaxOpenConns(100)
-
 	log.NewHelper(logger).Info("mysql连接成功")
 	return db, nil
 }

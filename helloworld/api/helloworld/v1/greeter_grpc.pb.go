@@ -26,7 +26,12 @@ const (
 	Greeter_RealName_FullMethodName       = "/helloworld.v1.Greeter/RealName"
 	Greeter_DriverRegister_FullMethodName = "/helloworld.v1.Greeter/DriverRegister"
 	Greeter_DriverStatus_FullMethodName   = "/helloworld.v1.Greeter/DriverStatus"
+	Greeter_DriverUpdate_FullMethodName   = "/helloworld.v1.Greeter/DriverUpdate"
 	Greeter_AddressList_FullMethodName    = "/helloworld.v1.Greeter/AddressList"
+	Greeter_UserAddress_FullMethodName    = "/helloworld.v1.Greeter/UserAddress"
+	Greeter_CreateTrip_FullMethodName     = "/helloworld.v1.Greeter/CreateTrip"
+	Greeter_DriverOrder_FullMethodName    = "/helloworld.v1.Greeter/DriverOrder"
+	Greeter_PayOrder_FullMethodName       = "/helloworld.v1.Greeter/PayOrder"
 )
 
 // GreeterClient is the client API for Greeter service.
@@ -40,7 +45,12 @@ type GreeterClient interface {
 	RealName(ctx context.Context, in *RealNameRequest, opts ...grpc.CallOption) (*RealNameReply, error)
 	DriverRegister(ctx context.Context, in *DriverRegisterRequest, opts ...grpc.CallOption) (*DriverRegisterReply, error)
 	DriverStatus(ctx context.Context, in *DriverStatusRequest, opts ...grpc.CallOption) (*DriverStatusReply, error)
+	DriverUpdate(ctx context.Context, in *DriverUpdateRequest, opts ...grpc.CallOption) (*DriverUpdateReply, error)
 	AddressList(ctx context.Context, in *AddressListRequest, opts ...grpc.CallOption) (*AddressListReply, error)
+	UserAddress(ctx context.Context, in *UserAddressRequest, opts ...grpc.CallOption) (*UserAddressReply, error)
+	CreateTrip(ctx context.Context, in *CreateTripRequest, opts ...grpc.CallOption) (*CreateTripReply, error)
+	DriverOrder(ctx context.Context, in *DriverOrderRequest, opts ...grpc.CallOption) (*DriverOrderReply, error)
+	PayOrder(ctx context.Context, in *PayOrderRequest, opts ...grpc.CallOption) (*PayOrderReply, error)
 }
 
 type greeterClient struct {
@@ -121,10 +131,60 @@ func (c *greeterClient) DriverStatus(ctx context.Context, in *DriverStatusReques
 	return out, nil
 }
 
+func (c *greeterClient) DriverUpdate(ctx context.Context, in *DriverUpdateRequest, opts ...grpc.CallOption) (*DriverUpdateReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DriverUpdateReply)
+	err := c.cc.Invoke(ctx, Greeter_DriverUpdate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *greeterClient) AddressList(ctx context.Context, in *AddressListRequest, opts ...grpc.CallOption) (*AddressListReply, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(AddressListReply)
 	err := c.cc.Invoke(ctx, Greeter_AddressList_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) UserAddress(ctx context.Context, in *UserAddressRequest, opts ...grpc.CallOption) (*UserAddressReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UserAddressReply)
+	err := c.cc.Invoke(ctx, Greeter_UserAddress_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) CreateTrip(ctx context.Context, in *CreateTripRequest, opts ...grpc.CallOption) (*CreateTripReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateTripReply)
+	err := c.cc.Invoke(ctx, Greeter_CreateTrip_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) DriverOrder(ctx context.Context, in *DriverOrderRequest, opts ...grpc.CallOption) (*DriverOrderReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DriverOrderReply)
+	err := c.cc.Invoke(ctx, Greeter_DriverOrder_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) PayOrder(ctx context.Context, in *PayOrderRequest, opts ...grpc.CallOption) (*PayOrderReply, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PayOrderReply)
+	err := c.cc.Invoke(ctx, Greeter_PayOrder_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -142,7 +202,12 @@ type GreeterServer interface {
 	RealName(context.Context, *RealNameRequest) (*RealNameReply, error)
 	DriverRegister(context.Context, *DriverRegisterRequest) (*DriverRegisterReply, error)
 	DriverStatus(context.Context, *DriverStatusRequest) (*DriverStatusReply, error)
+	DriverUpdate(context.Context, *DriverUpdateRequest) (*DriverUpdateReply, error)
 	AddressList(context.Context, *AddressListRequest) (*AddressListReply, error)
+	UserAddress(context.Context, *UserAddressRequest) (*UserAddressReply, error)
+	CreateTrip(context.Context, *CreateTripRequest) (*CreateTripReply, error)
+	DriverOrder(context.Context, *DriverOrderRequest) (*DriverOrderReply, error)
+	PayOrder(context.Context, *PayOrderRequest) (*PayOrderReply, error)
 	mustEmbedUnimplementedGreeterServer()
 }
 
@@ -174,8 +239,23 @@ func (UnimplementedGreeterServer) DriverRegister(context.Context, *DriverRegiste
 func (UnimplementedGreeterServer) DriverStatus(context.Context, *DriverStatusRequest) (*DriverStatusReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DriverStatus not implemented")
 }
+func (UnimplementedGreeterServer) DriverUpdate(context.Context, *DriverUpdateRequest) (*DriverUpdateReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DriverUpdate not implemented")
+}
 func (UnimplementedGreeterServer) AddressList(context.Context, *AddressListRequest) (*AddressListReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddressList not implemented")
+}
+func (UnimplementedGreeterServer) UserAddress(context.Context, *UserAddressRequest) (*UserAddressReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UserAddress not implemented")
+}
+func (UnimplementedGreeterServer) CreateTrip(context.Context, *CreateTripRequest) (*CreateTripReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTrip not implemented")
+}
+func (UnimplementedGreeterServer) DriverOrder(context.Context, *DriverOrderRequest) (*DriverOrderReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DriverOrder not implemented")
+}
+func (UnimplementedGreeterServer) PayOrder(context.Context, *PayOrderRequest) (*PayOrderReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PayOrder not implemented")
 }
 func (UnimplementedGreeterServer) mustEmbedUnimplementedGreeterServer() {}
 func (UnimplementedGreeterServer) testEmbeddedByValue()                 {}
@@ -324,6 +404,24 @@ func _Greeter_DriverStatus_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Greeter_DriverUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DriverUpdateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).DriverUpdate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_DriverUpdate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).DriverUpdate(ctx, req.(*DriverUpdateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Greeter_AddressList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddressListRequest)
 	if err := dec(in); err != nil {
@@ -338,6 +436,78 @@ func _Greeter_AddressList_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GreeterServer).AddressList(ctx, req.(*AddressListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_UserAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserAddressRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).UserAddress(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_UserAddress_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).UserAddress(ctx, req.(*UserAddressRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_CreateTrip_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTripRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).CreateTrip(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_CreateTrip_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).CreateTrip(ctx, req.(*CreateTripRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_DriverOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DriverOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).DriverOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_DriverOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).DriverOrder(ctx, req.(*DriverOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_PayOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PayOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).PayOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Greeter_PayOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).PayOrder(ctx, req.(*PayOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -378,8 +548,28 @@ var Greeter_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Greeter_DriverStatus_Handler,
 		},
 		{
+			MethodName: "DriverUpdate",
+			Handler:    _Greeter_DriverUpdate_Handler,
+		},
+		{
 			MethodName: "AddressList",
 			Handler:    _Greeter_AddressList_Handler,
+		},
+		{
+			MethodName: "UserAddress",
+			Handler:    _Greeter_UserAddress_Handler,
+		},
+		{
+			MethodName: "CreateTrip",
+			Handler:    _Greeter_CreateTrip_Handler,
+		},
+		{
+			MethodName: "DriverOrder",
+			Handler:    _Greeter_DriverOrder_Handler,
+		},
+		{
+			MethodName: "PayOrder",
+			Handler:    _Greeter_PayOrder_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

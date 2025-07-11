@@ -20,23 +20,33 @@ var _ = binding.EncodeURL
 const _ = http.SupportPackageIsVersion1
 
 const OperationGreeterAddressList = "/helloworld.v1.Greeter/AddressList"
+const OperationGreeterCreateTrip = "/helloworld.v1.Greeter/CreateTrip"
+const OperationGreeterDriverOrder = "/helloworld.v1.Greeter/DriverOrder"
 const OperationGreeterDriverRegister = "/helloworld.v1.Greeter/DriverRegister"
 const OperationGreeterDriverStatus = "/helloworld.v1.Greeter/DriverStatus"
+const OperationGreeterDriverUpdate = "/helloworld.v1.Greeter/DriverUpdate"
 const OperationGreeterInfoUser = "/helloworld.v1.Greeter/InfoUser"
 const OperationGreeterLogin = "/helloworld.v1.Greeter/Login"
+const OperationGreeterPayOrder = "/helloworld.v1.Greeter/PayOrder"
 const OperationGreeterRealName = "/helloworld.v1.Greeter/RealName"
 const OperationGreeterSendSms = "/helloworld.v1.Greeter/SendSms"
 const OperationGreeterUpdateUser = "/helloworld.v1.Greeter/UpdateUser"
+const OperationGreeterUserAddress = "/helloworld.v1.Greeter/UserAddress"
 
 type GreeterHTTPServer interface {
 	AddressList(context.Context, *AddressListRequest) (*AddressListReply, error)
+	CreateTrip(context.Context, *CreateTripRequest) (*CreateTripReply, error)
+	DriverOrder(context.Context, *DriverOrderRequest) (*DriverOrderReply, error)
 	DriverRegister(context.Context, *DriverRegisterRequest) (*DriverRegisterReply, error)
 	DriverStatus(context.Context, *DriverStatusRequest) (*DriverStatusReply, error)
+	DriverUpdate(context.Context, *DriverUpdateRequest) (*DriverUpdateReply, error)
 	InfoUser(context.Context, *InfoUserRequest) (*InfoUserReply, error)
 	Login(context.Context, *LoginRequest) (*LoginReply, error)
+	PayOrder(context.Context, *PayOrderRequest) (*PayOrderReply, error)
 	RealName(context.Context, *RealNameRequest) (*RealNameReply, error)
 	SendSms(context.Context, *SendSmsRequest) (*SendSmsReply, error)
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserReply, error)
+	UserAddress(context.Context, *UserAddressRequest) (*UserAddressReply, error)
 }
 
 func RegisterGreeterHTTPServer(s *http.Server, srv GreeterHTTPServer) {
@@ -48,7 +58,12 @@ func RegisterGreeterHTTPServer(s *http.Server, srv GreeterHTTPServer) {
 	r.GET("/user/realName", _Greeter_RealName0_HTTP_Handler(srv))
 	r.POST("/driver/driverRegister", _Greeter_DriverRegister0_HTTP_Handler(srv))
 	r.POST("/driver/driverStatus", _Greeter_DriverStatus0_HTTP_Handler(srv))
+	r.POST("/driver/driverUpdate", _Greeter_DriverUpdate0_HTTP_Handler(srv))
 	r.POST("/map/addressList", _Greeter_AddressList0_HTTP_Handler(srv))
+	r.POST("/map/userAddress", _Greeter_UserAddress0_HTTP_Handler(srv))
+	r.POST("/map/createTrip", _Greeter_CreateTrip0_HTTP_Handler(srv))
+	r.POST("/driver/DriverOrder", _Greeter_DriverOrder0_HTTP_Handler(srv))
+	r.POST("/user/payOrder", _Greeter_PayOrder0_HTTP_Handler(srv))
 }
 
 func _Greeter_SendSms0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
@@ -202,6 +217,28 @@ func _Greeter_DriverStatus0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Co
 	}
 }
 
+func _Greeter_DriverUpdate0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
+	return func(ctx http.Context) error {
+		var in DriverUpdateRequest
+		if err := ctx.Bind(&in); err != nil {
+			return err
+		}
+		if err := ctx.BindQuery(&in); err != nil {
+			return err
+		}
+		http.SetOperation(ctx, OperationGreeterDriverUpdate)
+		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
+			return srv.DriverUpdate(ctx, req.(*DriverUpdateRequest))
+		})
+		out, err := h(ctx, &in)
+		if err != nil {
+			return err
+		}
+		reply := out.(*DriverUpdateReply)
+		return ctx.Result(200, reply)
+	}
+}
+
 func _Greeter_AddressList0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
 		var in AddressListRequest
@@ -224,15 +261,108 @@ func _Greeter_AddressList0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Con
 	}
 }
 
+func _Greeter_UserAddress0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
+	return func(ctx http.Context) error {
+		var in UserAddressRequest
+		if err := ctx.Bind(&in); err != nil {
+			return err
+		}
+		if err := ctx.BindQuery(&in); err != nil {
+			return err
+		}
+		http.SetOperation(ctx, OperationGreeterUserAddress)
+		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
+			return srv.UserAddress(ctx, req.(*UserAddressRequest))
+		})
+		out, err := h(ctx, &in)
+		if err != nil {
+			return err
+		}
+		reply := out.(*UserAddressReply)
+		return ctx.Result(200, reply)
+	}
+}
+
+func _Greeter_CreateTrip0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
+	return func(ctx http.Context) error {
+		var in CreateTripRequest
+		if err := ctx.Bind(&in); err != nil {
+			return err
+		}
+		if err := ctx.BindQuery(&in); err != nil {
+			return err
+		}
+		http.SetOperation(ctx, OperationGreeterCreateTrip)
+		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
+			return srv.CreateTrip(ctx, req.(*CreateTripRequest))
+		})
+		out, err := h(ctx, &in)
+		if err != nil {
+			return err
+		}
+		reply := out.(*CreateTripReply)
+		return ctx.Result(200, reply)
+	}
+}
+
+func _Greeter_DriverOrder0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
+	return func(ctx http.Context) error {
+		var in DriverOrderRequest
+		if err := ctx.Bind(&in); err != nil {
+			return err
+		}
+		if err := ctx.BindQuery(&in); err != nil {
+			return err
+		}
+		http.SetOperation(ctx, OperationGreeterDriverOrder)
+		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
+			return srv.DriverOrder(ctx, req.(*DriverOrderRequest))
+		})
+		out, err := h(ctx, &in)
+		if err != nil {
+			return err
+		}
+		reply := out.(*DriverOrderReply)
+		return ctx.Result(200, reply)
+	}
+}
+
+func _Greeter_PayOrder0_HTTP_Handler(srv GreeterHTTPServer) func(ctx http.Context) error {
+	return func(ctx http.Context) error {
+		var in PayOrderRequest
+		if err := ctx.Bind(&in); err != nil {
+			return err
+		}
+		if err := ctx.BindQuery(&in); err != nil {
+			return err
+		}
+		http.SetOperation(ctx, OperationGreeterPayOrder)
+		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
+			return srv.PayOrder(ctx, req.(*PayOrderRequest))
+		})
+		out, err := h(ctx, &in)
+		if err != nil {
+			return err
+		}
+		reply := out.(*PayOrderReply)
+		return ctx.Result(200, reply)
+	}
+}
+
 type GreeterHTTPClient interface {
 	AddressList(ctx context.Context, req *AddressListRequest, opts ...http.CallOption) (rsp *AddressListReply, err error)
+	CreateTrip(ctx context.Context, req *CreateTripRequest, opts ...http.CallOption) (rsp *CreateTripReply, err error)
+	DriverOrder(ctx context.Context, req *DriverOrderRequest, opts ...http.CallOption) (rsp *DriverOrderReply, err error)
 	DriverRegister(ctx context.Context, req *DriverRegisterRequest, opts ...http.CallOption) (rsp *DriverRegisterReply, err error)
 	DriverStatus(ctx context.Context, req *DriverStatusRequest, opts ...http.CallOption) (rsp *DriverStatusReply, err error)
+	DriverUpdate(ctx context.Context, req *DriverUpdateRequest, opts ...http.CallOption) (rsp *DriverUpdateReply, err error)
 	InfoUser(ctx context.Context, req *InfoUserRequest, opts ...http.CallOption) (rsp *InfoUserReply, err error)
 	Login(ctx context.Context, req *LoginRequest, opts ...http.CallOption) (rsp *LoginReply, err error)
+	PayOrder(ctx context.Context, req *PayOrderRequest, opts ...http.CallOption) (rsp *PayOrderReply, err error)
 	RealName(ctx context.Context, req *RealNameRequest, opts ...http.CallOption) (rsp *RealNameReply, err error)
 	SendSms(ctx context.Context, req *SendSmsRequest, opts ...http.CallOption) (rsp *SendSmsReply, err error)
 	UpdateUser(ctx context.Context, req *UpdateUserRequest, opts ...http.CallOption) (rsp *UpdateUserReply, err error)
+	UserAddress(ctx context.Context, req *UserAddressRequest, opts ...http.CallOption) (rsp *UserAddressReply, err error)
 }
 
 type GreeterHTTPClientImpl struct {
@@ -248,6 +378,32 @@ func (c *GreeterHTTPClientImpl) AddressList(ctx context.Context, in *AddressList
 	pattern := "/map/addressList"
 	path := binding.EncodeURL(pattern, in, false)
 	opts = append(opts, http.Operation(OperationGreeterAddressList))
+	opts = append(opts, http.PathTemplate(pattern))
+	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
+
+func (c *GreeterHTTPClientImpl) CreateTrip(ctx context.Context, in *CreateTripRequest, opts ...http.CallOption) (*CreateTripReply, error) {
+	var out CreateTripReply
+	pattern := "/map/createTrip"
+	path := binding.EncodeURL(pattern, in, false)
+	opts = append(opts, http.Operation(OperationGreeterCreateTrip))
+	opts = append(opts, http.PathTemplate(pattern))
+	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
+
+func (c *GreeterHTTPClientImpl) DriverOrder(ctx context.Context, in *DriverOrderRequest, opts ...http.CallOption) (*DriverOrderReply, error) {
+	var out DriverOrderReply
+	pattern := "/driver/DriverOrder"
+	path := binding.EncodeURL(pattern, in, false)
+	opts = append(opts, http.Operation(OperationGreeterDriverOrder))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
 	if err != nil {
@@ -282,6 +438,19 @@ func (c *GreeterHTTPClientImpl) DriverStatus(ctx context.Context, in *DriverStat
 	return &out, nil
 }
 
+func (c *GreeterHTTPClientImpl) DriverUpdate(ctx context.Context, in *DriverUpdateRequest, opts ...http.CallOption) (*DriverUpdateReply, error) {
+	var out DriverUpdateReply
+	pattern := "/driver/driverUpdate"
+	path := binding.EncodeURL(pattern, in, false)
+	opts = append(opts, http.Operation(OperationGreeterDriverUpdate))
+	opts = append(opts, http.PathTemplate(pattern))
+	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
+
 func (c *GreeterHTTPClientImpl) InfoUser(ctx context.Context, in *InfoUserRequest, opts ...http.CallOption) (*InfoUserReply, error) {
 	var out InfoUserReply
 	pattern := "/user/infoUser"
@@ -300,6 +469,19 @@ func (c *GreeterHTTPClientImpl) Login(ctx context.Context, in *LoginRequest, opt
 	pattern := "/user/login"
 	path := binding.EncodeURL(pattern, in, false)
 	opts = append(opts, http.Operation(OperationGreeterLogin))
+	opts = append(opts, http.PathTemplate(pattern))
+	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
+
+func (c *GreeterHTTPClientImpl) PayOrder(ctx context.Context, in *PayOrderRequest, opts ...http.CallOption) (*PayOrderReply, error) {
+	var out PayOrderReply
+	pattern := "/user/payOrder"
+	path := binding.EncodeURL(pattern, in, false)
+	opts = append(opts, http.Operation(OperationGreeterPayOrder))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
 	if err != nil {
@@ -339,6 +521,19 @@ func (c *GreeterHTTPClientImpl) UpdateUser(ctx context.Context, in *UpdateUserRe
 	pattern := "/user/updateUser"
 	path := binding.EncodeURL(pattern, in, false)
 	opts = append(opts, http.Operation(OperationGreeterUpdateUser))
+	opts = append(opts, http.PathTemplate(pattern))
+	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
+
+func (c *GreeterHTTPClientImpl) UserAddress(ctx context.Context, in *UserAddressRequest, opts ...http.CallOption) (*UserAddressReply, error) {
+	var out UserAddressReply
+	pattern := "/map/userAddress"
+	path := binding.EncodeURL(pattern, in, false)
+	opts = append(opts, http.Operation(OperationGreeterUserAddress))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
 	if err != nil {

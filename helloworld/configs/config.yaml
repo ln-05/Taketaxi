@@ -8,7 +8,7 @@ server:
 data:
   database:
     driver: mysql
-    source: root:cd423a2933d92b70@tcp(14.103.168.20:3306)/order?parseTime=True&loc=Local
+    source: root:cd423a2933d92b70@tcp(14.103.168.20:3306)/lxh?parseTime=True&loc=Local
   redis:
     addr: 14.103.168.20:6379
     password: cd423a2933d92b70

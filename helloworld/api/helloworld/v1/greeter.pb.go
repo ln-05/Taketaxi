@@ -643,11 +643,19 @@ func (x *RealNameReply) GetMessage() string {
 }
 
 type DriverRegisterRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        int32                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	IdCard        string                 `protobuf:"bytes,2,opt,name=id_card,json=idCard,proto3" json:"id_card,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               int32                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Name                 string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	NickName             string                 `protobuf:"bytes,3,opt,name=nick_name,json=nickName,proto3" json:"nick_name,omitempty"`
+	CarAge               int32                  `protobuf:"varint,4,opt,name=car_age,json=carAge,proto3" json:"car_age,omitempty"`
+	Mobile               string                 `protobuf:"bytes,5,opt,name=mobile,proto3" json:"mobile,omitempty"`
+	FileId               int32                  `protobuf:"varint,6,opt,name=file_id,json=fileId,proto3" json:"file_id,omitempty"`
+	IdCardFileId         string                 `protobuf:"bytes,7,opt,name=id_card_file_id,json=idCardFileId,proto3" json:"id_card_file_id,omitempty"`
+	DriverLicenseFileId  string                 `protobuf:"bytes,8,opt,name=driver_license_file_id,json=driverLicenseFileId,proto3" json:"driver_license_file_id,omitempty"`
+	DrivingLicenseFileId string                 `protobuf:"bytes,9,opt,name=driving_license_file_id,json=drivingLicenseFileId,proto3" json:"driving_license_file_id,omitempty"`
+	AvatorFileId         string                 `protobuf:"bytes,10,opt,name=avator_file_id,json=avatorFileId,proto3" json:"avator_file_id,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *DriverRegisterRequest) Reset() {
@@ -687,9 +695,65 @@ func (x *DriverRegisterRequest) GetUserId() int32 {
 	return 0
 }
 
-func (x *DriverRegisterRequest) GetIdCard() string {
+func (x *DriverRegisterRequest) GetName() string {
 	if x != nil {
-		return x.IdCard
+		return x.Name
+	}
+	return ""
+}
+
+func (x *DriverRegisterRequest) GetNickName() string {
+	if x != nil {
+		return x.NickName
+	}
+	return ""
+}
+
+func (x *DriverRegisterRequest) GetCarAge() int32 {
+	if x != nil {
+		return x.CarAge
+	}
+	return 0
+}
+
+func (x *DriverRegisterRequest) GetMobile() string {
+	if x != nil {
+		return x.Mobile
+	}
+	return ""
+}
+
+func (x *DriverRegisterRequest) GetFileId() int32 {
+	if x != nil {
+		return x.FileId
+	}
+	return 0
+}
+
+func (x *DriverRegisterRequest) GetIdCardFileId() string {
+	if x != nil {
+		return x.IdCardFileId
+	}
+	return ""
+}
+
+func (x *DriverRegisterRequest) GetDriverLicenseFileId() string {
+	if x != nil {
+		return x.DriverLicenseFileId
+	}
+	return ""
+}
+
+func (x *DriverRegisterRequest) GetDrivingLicenseFileId() string {
+	if x != nil {
+		return x.DrivingLicenseFileId
+	}
+	return ""
+}
+
+func (x *DriverRegisterRequest) GetAvatorFileId() string {
+	if x != nil {
+		return x.AvatorFileId
 	}
 	return ""
 }
@@ -749,7 +813,7 @@ func (x *DriverRegisterReply) GetMessage() string {
 type DriverStatusRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	OnlineStatus  int64                  `protobuf:"varint,2,opt,name=online_status,json=onlineStatus,proto3" json:"online_status,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -791,11 +855,11 @@ func (x *DriverStatusRequest) GetId() int32 {
 	return 0
 }
 
-func (x *DriverStatusRequest) GetOnlineStatus() int64 {
+func (x *DriverStatusRequest) GetStatus() string {
 	if x != nil {
-		return x.OnlineStatus
+		return x.Status
 	}
-	return 0
+	return ""
 }
 
 type DriverStatusReply struct {
@@ -850,6 +914,134 @@ func (x *DriverStatusReply) GetMessage() string {
 	return ""
 }
 
+type DriverUpdateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	NickName      string                 `protobuf:"bytes,3,opt,name=nick_name,json=nickName,proto3" json:"nick_name,omitempty"`
+	CarAge        int32                  `protobuf:"varint,4,opt,name=car_age,json=carAge,proto3" json:"car_age,omitempty"`
+	Mobile        string                 `protobuf:"bytes,5,opt,name=mobile,proto3" json:"mobile,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DriverUpdateRequest) Reset() {
+	*x = DriverUpdateRequest{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DriverUpdateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DriverUpdateRequest) ProtoMessage() {}
+
+func (x *DriverUpdateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DriverUpdateRequest.ProtoReflect.Descriptor instead.
+func (*DriverUpdateRequest) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *DriverUpdateRequest) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *DriverUpdateRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *DriverUpdateRequest) GetNickName() string {
+	if x != nil {
+		return x.NickName
+	}
+	return ""
+}
+
+func (x *DriverUpdateRequest) GetCarAge() int32 {
+	if x != nil {
+		return x.CarAge
+	}
+	return 0
+}
+
+func (x *DriverUpdateRequest) GetMobile() string {
+	if x != nil {
+		return x.Mobile
+	}
+	return ""
+}
+
+type DriverUpdateReply struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Code          int64                  `protobuf:"varint,1,opt,name=code,proto3" json:"code,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DriverUpdateReply) Reset() {
+	*x = DriverUpdateReply{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DriverUpdateReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DriverUpdateReply) ProtoMessage() {}
+
+func (x *DriverUpdateReply) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DriverUpdateReply.ProtoReflect.Descriptor instead.
+func (*DriverUpdateReply) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *DriverUpdateReply) GetCode() int64 {
+	if x != nil {
+		return x.Code
+	}
+	return 0
+}
+
+func (x *DriverUpdateReply) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 type AddressListRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Page          int64                  `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
@@ -863,7 +1055,7 @@ type AddressListRequest struct {
 
 func (x *AddressListRequest) Reset() {
 	*x = AddressListRequest{}
-	mi := &file_helloworld_v1_greeter_proto_msgTypes[15]
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -875,7 +1067,7 @@ func (x *AddressListRequest) String() string {
 func (*AddressListRequest) ProtoMessage() {}
 
 func (x *AddressListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_helloworld_v1_greeter_proto_msgTypes[15]
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -888,7 +1080,7 @@ func (x *AddressListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddressListRequest.ProtoReflect.Descriptor instead.
 func (*AddressListRequest) Descriptor() ([]byte, []int) {
-	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{15}
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *AddressListRequest) GetPage() int64 {
@@ -935,7 +1127,7 @@ type AddressListReply struct {
 
 func (x *AddressListReply) Reset() {
 	*x = AddressListReply{}
-	mi := &file_helloworld_v1_greeter_proto_msgTypes[16]
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -947,7 +1139,7 @@ func (x *AddressListReply) String() string {
 func (*AddressListReply) ProtoMessage() {}
 
 func (x *AddressListReply) ProtoReflect() protoreflect.Message {
-	mi := &file_helloworld_v1_greeter_proto_msgTypes[16]
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -960,7 +1152,7 @@ func (x *AddressListReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddressListReply.ProtoReflect.Descriptor instead.
 func (*AddressListReply) Descriptor() ([]byte, []int) {
-	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{16}
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *AddressListReply) GetList() []*AddressList {
@@ -983,7 +1175,7 @@ type AddressList struct {
 
 func (x *AddressList) Reset() {
 	*x = AddressList{}
-	mi := &file_helloworld_v1_greeter_proto_msgTypes[17]
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -995,7 +1187,7 @@ func (x *AddressList) String() string {
 func (*AddressList) ProtoMessage() {}
 
 func (x *AddressList) ProtoReflect() protoreflect.Message {
-	mi := &file_helloworld_v1_greeter_proto_msgTypes[17]
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1008,7 +1200,7 @@ func (x *AddressList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddressList.ProtoReflect.Descriptor instead.
 func (*AddressList) Descriptor() ([]byte, []int) {
-	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{17}
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *AddressList) GetAddress() string {
@@ -1042,6 +1234,518 @@ func (x *AddressList) GetDistrict() string {
 func (x *AddressList) GetTel() string {
 	if x != nil {
 		return x.Tel
+	}
+	return ""
+}
+
+type UserAddressRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Longitude     float64                `protobuf:"fixed64,2,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	Latitude      float64                `protobuf:"fixed64,3,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserAddressRequest) Reset() {
+	*x = UserAddressRequest{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserAddressRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserAddressRequest) ProtoMessage() {}
+
+func (x *UserAddressRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserAddressRequest.ProtoReflect.Descriptor instead.
+func (*UserAddressRequest) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *UserAddressRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *UserAddressRequest) GetLongitude() float64 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
+}
+
+func (x *UserAddressRequest) GetLatitude() float64 {
+	if x != nil {
+		return x.Latitude
+	}
+	return 0
+}
+
+type UserAddressReply struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Code          int64                  `protobuf:"varint,1,opt,name=code,proto3" json:"code,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	Address       string                 `protobuf:"bytes,3,opt,name=address,proto3" json:"address,omitempty"`
+	Province      string                 `protobuf:"bytes,4,opt,name=province,proto3" json:"province,omitempty"`
+	City          string                 `protobuf:"bytes,5,opt,name=city,proto3" json:"city,omitempty"`
+	District      string                 `protobuf:"bytes,6,opt,name=district,proto3" json:"district,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserAddressReply) Reset() {
+	*x = UserAddressReply{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserAddressReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserAddressReply) ProtoMessage() {}
+
+func (x *UserAddressReply) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserAddressReply.ProtoReflect.Descriptor instead.
+func (*UserAddressReply) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *UserAddressReply) GetCode() int64 {
+	if x != nil {
+		return x.Code
+	}
+	return 0
+}
+
+func (x *UserAddressReply) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *UserAddressReply) GetAddress() string {
+	if x != nil {
+		return x.Address
+	}
+	return ""
+}
+
+func (x *UserAddressReply) GetProvince() string {
+	if x != nil {
+		return x.Province
+	}
+	return ""
+}
+
+func (x *UserAddressReply) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *UserAddressReply) GetDistrict() string {
+	if x != nil {
+		return x.District
+	}
+	return ""
+}
+
+type CreateTripRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	StartLng      float64                `protobuf:"fixed64,2,opt,name=start_lng,json=startLng,proto3" json:"start_lng,omitempty"`
+	StartLat      float64                `protobuf:"fixed64,3,opt,name=start_lat,json=startLat,proto3" json:"start_lat,omitempty"`
+	EndLng        float64                `protobuf:"fixed64,4,opt,name=end_lng,json=endLng,proto3" json:"end_lng,omitempty"`
+	EndLat        float64                `protobuf:"fixed64,5,opt,name=end_lat,json=endLat,proto3" json:"end_lat,omitempty"`
+	StartAddr     string                 `protobuf:"bytes,6,opt,name=start_addr,json=startAddr,proto3" json:"start_addr,omitempty"`
+	EndAddr       string                 `protobuf:"bytes,7,opt,name=end_addr,json=endAddr,proto3" json:"end_addr,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateTripRequest) Reset() {
+	*x = CreateTripRequest{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTripRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTripRequest) ProtoMessage() {}
+
+func (x *CreateTripRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTripRequest.ProtoReflect.Descriptor instead.
+func (*CreateTripRequest) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *CreateTripRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *CreateTripRequest) GetStartLng() float64 {
+	if x != nil {
+		return x.StartLng
+	}
+	return 0
+}
+
+func (x *CreateTripRequest) GetStartLat() float64 {
+	if x != nil {
+		return x.StartLat
+	}
+	return 0
+}
+
+func (x *CreateTripRequest) GetEndLng() float64 {
+	if x != nil {
+		return x.EndLng
+	}
+	return 0
+}
+
+func (x *CreateTripRequest) GetEndLat() float64 {
+	if x != nil {
+		return x.EndLat
+	}
+	return 0
+}
+
+func (x *CreateTripRequest) GetStartAddr() string {
+	if x != nil {
+		return x.StartAddr
+	}
+	return ""
+}
+
+func (x *CreateTripRequest) GetEndAddr() string {
+	if x != nil {
+		return x.EndAddr
+	}
+	return ""
+}
+
+type CreateTripReply struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TripId        int64                  `protobuf:"varint,1,opt,name=trip_id,json=tripId,proto3" json:"trip_id,omitempty"`
+	OrderCode     string                 `protobuf:"bytes,2,opt,name=order_code,json=orderCode,proto3" json:"order_code,omitempty"`
+	Price         float64                `protobuf:"fixed64,3,opt,name=price,proto3" json:"price,omitempty"`
+	OrderStatus   string                 `protobuf:"bytes,4,opt,name=order_status,json=orderStatus,proto3" json:"order_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateTripReply) Reset() {
+	*x = CreateTripReply{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTripReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTripReply) ProtoMessage() {}
+
+func (x *CreateTripReply) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTripReply.ProtoReflect.Descriptor instead.
+func (*CreateTripReply) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *CreateTripReply) GetTripId() int64 {
+	if x != nil {
+		return x.TripId
+	}
+	return 0
+}
+
+func (x *CreateTripReply) GetOrderCode() string {
+	if x != nil {
+		return x.OrderCode
+	}
+	return ""
+}
+
+func (x *CreateTripReply) GetPrice() float64 {
+	if x != nil {
+		return x.Price
+	}
+	return 0
+}
+
+func (x *CreateTripReply) GetOrderStatus() string {
+	if x != nil {
+		return x.OrderStatus
+	}
+	return ""
+}
+
+type DriverOrderRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DriverId      int32                  `protobuf:"varint,1,opt,name=driver_id,json=driverId,proto3" json:"driver_id,omitempty"`
+	OrderCode     string                 `protobuf:"bytes,2,opt,name=order_code,json=orderCode,proto3" json:"order_code,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DriverOrderRequest) Reset() {
+	*x = DriverOrderRequest{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DriverOrderRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DriverOrderRequest) ProtoMessage() {}
+
+func (x *DriverOrderRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DriverOrderRequest.ProtoReflect.Descriptor instead.
+func (*DriverOrderRequest) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *DriverOrderRequest) GetDriverId() int32 {
+	if x != nil {
+		return x.DriverId
+	}
+	return 0
+}
+
+func (x *DriverOrderRequest) GetOrderCode() string {
+	if x != nil {
+		return x.OrderCode
+	}
+	return ""
+}
+
+type DriverOrderReply struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Code          int32                  `protobuf:"varint,1,opt,name=code,proto3" json:"code,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DriverOrderReply) Reset() {
+	*x = DriverOrderReply{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DriverOrderReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DriverOrderReply) ProtoMessage() {}
+
+func (x *DriverOrderReply) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DriverOrderReply.ProtoReflect.Descriptor instead.
+func (*DriverOrderReply) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *DriverOrderReply) GetCode() int32 {
+	if x != nil {
+		return x.Code
+	}
+	return 0
+}
+
+func (x *DriverOrderReply) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type PayOrderRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PayOrderRequest) Reset() {
+	*x = PayOrderRequest{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PayOrderRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PayOrderRequest) ProtoMessage() {}
+
+func (x *PayOrderRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PayOrderRequest.ProtoReflect.Descriptor instead.
+func (*PayOrderRequest) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *PayOrderRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type PayOrderReply struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Code          int32                  `protobuf:"varint,1,opt,name=code,proto3" json:"code,omitempty"`
+	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
+	PayUrl        string                 `protobuf:"bytes,3,opt,name=pay_url,json=payUrl,proto3" json:"pay_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PayOrderReply) Reset() {
+	*x = PayOrderReply{}
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PayOrderReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PayOrderReply) ProtoMessage() {}
+
+func (x *PayOrderReply) ProtoReflect() protoreflect.Message {
+	mi := &file_helloworld_v1_greeter_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PayOrderReply.ProtoReflect.Descriptor instead.
+func (*PayOrderReply) Descriptor() ([]byte, []int) {
+	return file_helloworld_v1_greeter_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *PayOrderReply) GetCode() int32 {
+	if x != nil {
+		return x.Code
+	}
+	return 0
+}
+
+func (x *PayOrderReply) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+func (x *PayOrderReply) GetPayUrl() string {
+	if x != nil {
+		return x.PayUrl
 	}
 	return ""
 }
@@ -1090,17 +1794,35 @@ const file_helloworld_v1_greeter_proto_rawDesc = "" +
 	"\aid_card\x18\x03 \x01(\tR\x06idCard\"=\n" +
 	"\rRealNameReply\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\x03R\x04code\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage\"I\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"\xe4\x02\n" +
 	"\x15DriverRegisterRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x05R\x06userId\x12\x17\n" +
-	"\aid_card\x18\x02 \x01(\tR\x06idCard\"C\n" +
+	"\auser_id\x18\x01 \x01(\x05R\x06userId\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1b\n" +
+	"\tnick_name\x18\x03 \x01(\tR\bnickName\x12\x17\n" +
+	"\acar_age\x18\x04 \x01(\x05R\x06carAge\x12\x16\n" +
+	"\x06mobile\x18\x05 \x01(\tR\x06mobile\x12\x17\n" +
+	"\afile_id\x18\x06 \x01(\x05R\x06fileId\x12%\n" +
+	"\x0fid_card_file_id\x18\a \x01(\tR\fidCardFileId\x123\n" +
+	"\x16driver_license_file_id\x18\b \x01(\tR\x13driverLicenseFileId\x125\n" +
+	"\x17driving_license_file_id\x18\t \x01(\tR\x14drivingLicenseFileId\x12$\n" +
+	"\x0eavator_file_id\x18\n" +
+	" \x01(\tR\favatorFileId\"C\n" +
 	"\x13DriverRegisterReply\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\x03R\x04code\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage\"J\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"=\n" +
 	"\x13DriverStatusRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x05R\x02id\x12#\n" +
-	"\ronline_status\x18\x02 \x01(\x03R\fonlineStatus\"A\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\"A\n" +
 	"\x11DriverStatusReply\x12\x12\n" +
+	"\x04code\x18\x01 \x01(\x03R\x04code\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"\x87\x01\n" +
+	"\x13DriverUpdateRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1b\n" +
+	"\tnick_name\x18\x03 \x01(\tR\bnickName\x12\x17\n" +
+	"\acar_age\x18\x04 \x01(\x05R\x06carAge\x12\x16\n" +
+	"\x06mobile\x18\x05 \x01(\tR\x06mobile\"A\n" +
+	"\x11DriverUpdateReply\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\x03R\x04code\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\"\x88\x01\n" +
 	"\x12AddressListRequest\x12\x12\n" +
@@ -1116,7 +1838,46 @@ const file_helloworld_v1_greeter_proto_rawDesc = "" +
 	"\bprovince\x18\x02 \x01(\tR\bprovince\x12\x12\n" +
 	"\x04city\x18\x03 \x01(\tR\x04city\x12\x1a\n" +
 	"\bdistrict\x18\x04 \x01(\tR\bdistrict\x12\x10\n" +
-	"\x03tel\x18\x05 \x01(\tR\x03tel2\xdd\x06\n" +
+	"\x03tel\x18\x05 \x01(\tR\x03tel\"g\n" +
+	"\x12UserAddressRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12\x1c\n" +
+	"\tlongitude\x18\x02 \x01(\x01R\tlongitude\x12\x1a\n" +
+	"\blatitude\x18\x03 \x01(\x01R\blatitude\"\xa6\x01\n" +
+	"\x10UserAddressReply\x12\x12\n" +
+	"\x04code\x18\x01 \x01(\x03R\x04code\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\x12\x18\n" +
+	"\aaddress\x18\x03 \x01(\tR\aaddress\x12\x1a\n" +
+	"\bprovince\x18\x04 \x01(\tR\bprovince\x12\x12\n" +
+	"\x04city\x18\x05 \x01(\tR\x04city\x12\x1a\n" +
+	"\bdistrict\x18\x06 \x01(\tR\bdistrict\"\xd2\x01\n" +
+	"\x11CreateTripRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12\x1b\n" +
+	"\tstart_lng\x18\x02 \x01(\x01R\bstartLng\x12\x1b\n" +
+	"\tstart_lat\x18\x03 \x01(\x01R\bstartLat\x12\x17\n" +
+	"\aend_lng\x18\x04 \x01(\x01R\x06endLng\x12\x17\n" +
+	"\aend_lat\x18\x05 \x01(\x01R\x06endLat\x12\x1d\n" +
+	"\n" +
+	"start_addr\x18\x06 \x01(\tR\tstartAddr\x12\x19\n" +
+	"\bend_addr\x18\a \x01(\tR\aendAddr\"\x82\x01\n" +
+	"\x0fCreateTripReply\x12\x17\n" +
+	"\atrip_id\x18\x01 \x01(\x03R\x06tripId\x12\x1d\n" +
+	"\n" +
+	"order_code\x18\x02 \x01(\tR\torderCode\x12\x14\n" +
+	"\x05price\x18\x03 \x01(\x01R\x05price\x12!\n" +
+	"\forder_status\x18\x04 \x01(\tR\vorderStatus\"P\n" +
+	"\x12DriverOrderRequest\x12\x1b\n" +
+	"\tdriver_id\x18\x01 \x01(\x05R\bdriverId\x12\x1d\n" +
+	"\n" +
+	"order_code\x18\x02 \x01(\tR\torderCode\"@\n" +
+	"\x10DriverOrderReply\x12\x12\n" +
+	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"!\n" +
+	"\x0fPayOrderRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"N\n" +
+	"\rPayOrderReply\x12\x12\n" +
+	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x10\n" +
+	"\x03msg\x18\x02 \x01(\tR\x03msg\x12\x17\n" +
+	"\apay_url\x18\x03 \x01(\tR\x06payUrl2\x88\v\n" +
 	"\aGreeter\x12_\n" +
 	"\aSendSms\x12\x1d.helloworld.v1.SendSmsRequest\x1a\x1b.helloworld.v1.SendSmsReply\"\x18\x82\xd3\xe4\x93\x02\x12:\x01*\"\r/user/sendSms\x12W\n" +
 	"\x05Login\x12\x1b.helloworld.v1.LoginRequest\x1a\x19.helloworld.v1.LoginReply\"\x16\x82\xd3\xe4\x93\x02\x10:\x01*\"\v/user/login\x12k\n" +
@@ -1125,8 +1886,14 @@ const file_helloworld_v1_greeter_proto_rawDesc = "" +
 	"\bInfoUser\x12\x1e.helloworld.v1.InfoUserRequest\x1a\x1c.helloworld.v1.InfoUserReply\"\x19\x82\xd3\xe4\x93\x02\x13:\x01*\"\x0e/user/infoUser\x12`\n" +
 	"\bRealName\x12\x1e.helloworld.v1.RealNameRequest\x1a\x1c.helloworld.v1.RealNameReply\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/user/realName\x12}\n" +
 	"\x0eDriverRegister\x12$.helloworld.v1.DriverRegisterRequest\x1a\".helloworld.v1.DriverRegisterReply\"!\x82\xd3\xe4\x93\x02\x1b:\x01*\"\x16/driver/driverRegister\x12u\n" +
-	"\fDriverStatus\x12\".helloworld.v1.DriverStatusRequest\x1a .helloworld.v1.DriverStatusReply\"\x1f\x82\xd3\xe4\x93\x02\x19:\x01*\"\x14/driver/driverStatus\x12n\n" +
-	"\vAddressList\x12!.helloworld.v1.AddressListRequest\x1a\x1f.helloworld.v1.AddressListReply\"\x1b\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/map/addressListBT\n" +
+	"\fDriverStatus\x12\".helloworld.v1.DriverStatusRequest\x1a .helloworld.v1.DriverStatusReply\"\x1f\x82\xd3\xe4\x93\x02\x19:\x01*\"\x14/driver/driverStatus\x12u\n" +
+	"\fDriverUpdate\x12\".helloworld.v1.DriverUpdateRequest\x1a .helloworld.v1.DriverUpdateReply\"\x1f\x82\xd3\xe4\x93\x02\x19:\x01*\"\x14/driver/driverUpdate\x12n\n" +
+	"\vAddressList\x12!.helloworld.v1.AddressListRequest\x1a\x1f.helloworld.v1.AddressListReply\"\x1b\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/map/addressList\x12n\n" +
+	"\vUserAddress\x12!.helloworld.v1.UserAddressRequest\x1a\x1f.helloworld.v1.UserAddressReply\"\x1b\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/map/userAddress\x12j\n" +
+	"\n" +
+	"CreateTrip\x12 .helloworld.v1.CreateTripRequest\x1a\x1e.helloworld.v1.CreateTripReply\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*\"\x0f/map/createTrip\x12q\n" +
+	"\vDriverOrder\x12!.helloworld.v1.DriverOrderRequest\x1a\x1f.helloworld.v1.DriverOrderReply\"\x1e\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/driver/DriverOrder\x12c\n" +
+	"\bPayOrder\x12\x1e.helloworld.v1.PayOrderRequest\x1a\x1c.helloworld.v1.PayOrderReply\"\x19\x82\xd3\xe4\x93\x02\x13:\x01*\"\x0e/user/payOrderBT\n" +
 	"\x1cdev.kratos.api.helloworld.v1B\x11HelloworldProtoV1P\x01Z\x1fhelloworld/api/helloworld/v1;v1b\x06proto3"
 
 var (
@@ -1141,7 +1908,7 @@ func file_helloworld_v1_greeter_proto_rawDescGZIP() []byte {
 	return file_helloworld_v1_greeter_proto_rawDescData
 }
 
-var file_helloworld_v1_greeter_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_helloworld_v1_greeter_proto_msgTypes = make([]protoimpl.MessageInfo, 28)
 var file_helloworld_v1_greeter_proto_goTypes = []any{
 	(*SendSmsRequest)(nil),        // 0: helloworld.v1.SendSmsRequest
 	(*SendSmsReply)(nil),          // 1: helloworld.v1.SendSmsReply
@@ -1158,13 +1925,23 @@ var file_helloworld_v1_greeter_proto_goTypes = []any{
 	(*DriverRegisterReply)(nil),   // 12: helloworld.v1.DriverRegisterReply
 	(*DriverStatusRequest)(nil),   // 13: helloworld.v1.DriverStatusRequest
 	(*DriverStatusReply)(nil),     // 14: helloworld.v1.DriverStatusReply
-	(*AddressListRequest)(nil),    // 15: helloworld.v1.AddressListRequest
-	(*AddressListReply)(nil),      // 16: helloworld.v1.AddressListReply
-	(*AddressList)(nil),           // 17: helloworld.v1.AddressList
+	(*DriverUpdateRequest)(nil),   // 15: helloworld.v1.DriverUpdateRequest
+	(*DriverUpdateReply)(nil),     // 16: helloworld.v1.DriverUpdateReply
+	(*AddressListRequest)(nil),    // 17: helloworld.v1.AddressListRequest
+	(*AddressListReply)(nil),      // 18: helloworld.v1.AddressListReply
+	(*AddressList)(nil),           // 19: helloworld.v1.AddressList
+	(*UserAddressRequest)(nil),    // 20: helloworld.v1.UserAddressRequest
+	(*UserAddressReply)(nil),      // 21: helloworld.v1.UserAddressReply
+	(*CreateTripRequest)(nil),     // 22: helloworld.v1.CreateTripRequest
+	(*CreateTripReply)(nil),       // 23: helloworld.v1.CreateTripReply
+	(*DriverOrderRequest)(nil),    // 24: helloworld.v1.DriverOrderRequest
+	(*DriverOrderReply)(nil),      // 25: helloworld.v1.DriverOrderReply
+	(*PayOrderRequest)(nil),       // 26: helloworld.v1.PayOrderRequest
+	(*PayOrderReply)(nil),         // 27: helloworld.v1.PayOrderReply
 }
 var file_helloworld_v1_greeter_proto_depIdxs = []int32{
 	8,  // 0: helloworld.v1.InfoUserReply.info:type_name -> helloworld.v1.Data
-	17, // 1: helloworld.v1.AddressListReply.list:type_name -> helloworld.v1.AddressList
+	19, // 1: helloworld.v1.AddressListReply.list:type_name -> helloworld.v1.AddressList
 	0,  // 2: helloworld.v1.Greeter.SendSms:input_type -> helloworld.v1.SendSmsRequest
 	2,  // 3: helloworld.v1.Greeter.Login:input_type -> helloworld.v1.LoginRequest
 	4,  // 4: helloworld.v1.Greeter.UpdateUser:input_type -> helloworld.v1.UpdateUserRequest
@@ -1172,17 +1949,27 @@ var file_helloworld_v1_greeter_proto_depIdxs = []int32{
 	9,  // 6: helloworld.v1.Greeter.RealName:input_type -> helloworld.v1.RealNameRequest
 	11, // 7: helloworld.v1.Greeter.DriverRegister:input_type -> helloworld.v1.DriverRegisterRequest
 	13, // 8: helloworld.v1.Greeter.DriverStatus:input_type -> helloworld.v1.DriverStatusRequest
-	15, // 9: helloworld.v1.Greeter.AddressList:input_type -> helloworld.v1.AddressListRequest
-	1,  // 10: helloworld.v1.Greeter.SendSms:output_type -> helloworld.v1.SendSmsReply
-	3,  // 11: helloworld.v1.Greeter.Login:output_type -> helloworld.v1.LoginReply
-	5,  // 12: helloworld.v1.Greeter.UpdateUser:output_type -> helloworld.v1.UpdateUserReply
-	7,  // 13: helloworld.v1.Greeter.InfoUser:output_type -> helloworld.v1.InfoUserReply
-	10, // 14: helloworld.v1.Greeter.RealName:output_type -> helloworld.v1.RealNameReply
-	12, // 15: helloworld.v1.Greeter.DriverRegister:output_type -> helloworld.v1.DriverRegisterReply
-	14, // 16: helloworld.v1.Greeter.DriverStatus:output_type -> helloworld.v1.DriverStatusReply
-	16, // 17: helloworld.v1.Greeter.AddressList:output_type -> helloworld.v1.AddressListReply
-	10, // [10:18] is the sub-list for method output_type
-	2,  // [2:10] is the sub-list for method input_type
+	15, // 9: helloworld.v1.Greeter.DriverUpdate:input_type -> helloworld.v1.DriverUpdateRequest
+	17, // 10: helloworld.v1.Greeter.AddressList:input_type -> helloworld.v1.AddressListRequest
+	20, // 11: helloworld.v1.Greeter.UserAddress:input_type -> helloworld.v1.UserAddressRequest
+	22, // 12: helloworld.v1.Greeter.CreateTrip:input_type -> helloworld.v1.CreateTripRequest
+	24, // 13: helloworld.v1.Greeter.DriverOrder:input_type -> helloworld.v1.DriverOrderRequest
+	26, // 14: helloworld.v1.Greeter.PayOrder:input_type -> helloworld.v1.PayOrderRequest
+	1,  // 15: helloworld.v1.Greeter.SendSms:output_type -> helloworld.v1.SendSmsReply
+	3,  // 16: helloworld.v1.Greeter.Login:output_type -> helloworld.v1.LoginReply
+	5,  // 17: helloworld.v1.Greeter.UpdateUser:output_type -> helloworld.v1.UpdateUserReply
+	7,  // 18: helloworld.v1.Greeter.InfoUser:output_type -> helloworld.v1.InfoUserReply
+	10, // 19: helloworld.v1.Greeter.RealName:output_type -> helloworld.v1.RealNameReply
+	12, // 20: helloworld.v1.Greeter.DriverRegister:output_type -> helloworld.v1.DriverRegisterReply
+	14, // 21: helloworld.v1.Greeter.DriverStatus:output_type -> helloworld.v1.DriverStatusReply
+	16, // 22: helloworld.v1.Greeter.DriverUpdate:output_type -> helloworld.v1.DriverUpdateReply
+	18, // 23: helloworld.v1.Greeter.AddressList:output_type -> helloworld.v1.AddressListReply
+	21, // 24: helloworld.v1.Greeter.UserAddress:output_type -> helloworld.v1.UserAddressReply
+	23, // 25: helloworld.v1.Greeter.CreateTrip:output_type -> helloworld.v1.CreateTripReply
+	25, // 26: helloworld.v1.Greeter.DriverOrder:output_type -> helloworld.v1.DriverOrderReply
+	27, // 27: helloworld.v1.Greeter.PayOrder:output_type -> helloworld.v1.PayOrderReply
+	15, // [15:28] is the sub-list for method output_type
+	2,  // [2:15] is the sub-list for method input_type
 	2,  // [2:2] is the sub-list for extension type_name
 	2,  // [2:2] is the sub-list for extension extendee
 	0,  // [0:2] is the sub-list for field type_name
@@ -1199,7 +1986,7 @@ func file_helloworld_v1_greeter_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_helloworld_v1_greeter_proto_rawDesc), len(file_helloworld_v1_greeter_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   18,
+			NumMessages:   28,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

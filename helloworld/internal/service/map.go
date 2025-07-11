@@ -4,8 +4,10 @@ import (
 	"context"
 	v1 "helloworld/api/helloworld/v1"
 	"helloworld/internal/biz"
+	"helloworld/pkg"
 )
 
+// 查询地址
 func (c *GreeterService) AddressList(ctx context.Context, in *v1.AddressListRequest) (*v1.AddressListReply, error) {
 	var maps []biz.MapPoi
 	var maplist []*v1.AddressList
@@ -46,4 +48,23 @@ func (c *GreeterService) AddressList(ctx context.Context, in *v1.AddressListRequ
 
 	return &v1.AddressListReply{List: maplist}, nil
 
+}
+
+// 获取当前定位
+func (c *GreeterService) UserAddress(_ context.Context, in *v1.UserAddressRequest) (*v1.UserAddressReply, error) {
+	address, province, city, district, err := pkg.GetLocationByLatLng(in.Latitude, in.Longitude)
+	if err != nil {
+		return &v1.UserAddressReply{
+			Code:    500,
+			Message: err.Error(),
+		}, nil
+	}
+	return &v1.UserAddressReply{
+		Code:     200,
+		Message:  "获取成功",
+		Address:  address,
+		Province: province,
+		City:     city,
+		District: district,
+	}, nil
 }

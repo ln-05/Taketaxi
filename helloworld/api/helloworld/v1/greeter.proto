@@ -55,9 +55,45 @@ service Greeter {
     };
   }
 
+  rpc DriverUpdate (DriverUpdateRequest) returns (DriverUpdateReply) {
+    option (google.api.http) = {
+      post: "/driver/driverUpdate"
+      body: "*"
+    };
+  }
+
+
   rpc AddressList (AddressListRequest) returns (AddressListReply) {
     option (google.api.http) = {
       post: "/map/addressList"
+      body: "*"
+    };
+  }
+
+  rpc UserAddress (UserAddressRequest) returns (UserAddressReply) {
+    option (google.api.http) = {
+      post: "/map/userAddress"
+      body: "*"
+    };
+  }
+
+  rpc CreateTrip (CreateTripRequest) returns (CreateTripReply) {
+    option (google.api.http) = {
+      post: "/map/createTrip"
+      body: "*"
+    };
+  }
+
+  rpc DriverOrder (DriverOrderRequest) returns (DriverOrderReply) {
+    option (google.api.http) = {
+      post: "/driver/DriverOrder"
+      body: "*"
+    };
+  }
+
+  rpc PayOrder (PayOrderRequest) returns (PayOrderReply) {
+    option (google.api.http) = {
+      post: "/user/payOrder"
       body: "*"
     };
   }
@@ -130,7 +166,15 @@ message RealNameReply {
 
 message DriverRegisterRequest {
   int32 user_id = 1;
-  string id_card = 2;
+  string name = 2;
+  string nick_name = 3;
+  int32 car_age = 4;
+  string mobile = 5;
+  int32 file_id = 6;
+  string id_card_file_id = 7;
+  string driver_license_file_id = 8;
+  string driving_license_file_id = 9;
+  string avator_file_id = 10;
 }
 
 message DriverRegisterReply {
@@ -140,7 +184,7 @@ message DriverRegisterReply {
 
 message DriverStatusRequest {
   int32 id = 1;
-  int64 online_status = 2;
+  string status = 2;
 }
 
 message DriverStatusReply {
@@ -148,6 +192,19 @@ message DriverStatusReply {
   string message= 2;
 }
 
+
+message DriverUpdateRequest {
+  int32 id = 1;
+  string name = 2;
+  string nick_name = 3;
+  int32 car_age = 4;
+  string mobile = 5;
+}
+
+message DriverUpdateReply {
+  int64 code=1;
+  string message= 2;
+}
 
 message AddressListRequest {
   int64 page = 1;
@@ -169,3 +226,61 @@ message AddressList {
   string tel=5;
 }
 
+message UserAddressRequest {
+  int64 user_id = 1;
+  double longitude = 2;
+  double latitude = 3;
+}
+
+message UserAddressReply {
+  int64 code = 1;
+  string message = 2;
+  string address = 3;
+  string province = 4;
+  string city = 5;
+  string district = 6;
+}
+
+message CreateTripRequest {
+  int64 user_id = 1;
+  double start_lng = 2;
+  double start_lat = 3;
+  double end_lng = 4;
+  double end_lat = 5;
+  string start_addr = 6;
+  string end_addr = 7;
+}
+
+
+message CreateTripReply {
+  int64 trip_id = 1;
+  string order_code = 2;
+  double price = 3;
+  string order_status = 4;
+}
+
+
+
+message DriverOrderRequest {
+  int32 driver_id = 1;
+  string order_code = 2;
+
+}
+
+
+message DriverOrderReply {
+  int32 code = 1;
+  string message = 2;
+}
+
+
+
+message PayOrderRequest {
+  int64 id = 1;
+}
+
+message PayOrderReply {
+  int32 code =1;
+  string msg =2;
+  string pay_url=3;
+}

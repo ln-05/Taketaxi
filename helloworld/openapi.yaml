@@ -6,6 +6,24 @@ info:
     title: Greeter API
     version: 0.0.1
 paths:
+    /driver/DriverOrder:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_DriverOrder
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.DriverOrderRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.DriverOrderReply'
     /driver/driverRegister:
         post:
             tags:
@@ -42,6 +60,24 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/helloworld.v1.DriverStatusReply'
+    /driver/driverUpdate:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_DriverUpdate
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.DriverUpdateRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.DriverUpdateReply'
     /map/addressList:
         post:
             tags:
@@ -60,6 +96,42 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/helloworld.v1.AddressListReply'
+    /map/createTrip:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_CreateTrip
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.CreateTripRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.CreateTripReply'
+    /map/userAddress:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_UserAddress
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.UserAddressRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.UserAddressReply'
     /user/infoUser:
         post:
             tags:
@@ -96,6 +168,24 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/helloworld.v1.LoginReply'
+    /user/payOrder:
+        post:
+            tags:
+                - Greeter
+            operationId: Greeter_PayOrder
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/helloworld.v1.PayOrderRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/helloworld.v1.PayOrderReply'
     /user/realName:
         get:
             tags:
@@ -192,6 +282,39 @@ components:
                     type: string
                 district:
                     type: string
+        helloworld.v1.CreateTripReply:
+            type: object
+            properties:
+                tripId:
+                    type: string
+                orderCode:
+                    type: string
+                price:
+                    type: number
+                    format: double
+                orderStatus:
+                    type: string
+        helloworld.v1.CreateTripRequest:
+            type: object
+            properties:
+                userId:
+                    type: string
+                startLng:
+                    type: number
+                    format: double
+                startLat:
+                    type: number
+                    format: double
+                endLng:
+                    type: number
+                    format: double
+                endLat:
+                    type: number
+                    format: double
+                startAddr:
+                    type: string
+                endAddr:
+                    type: string
         helloworld.v1.Data:
             type: object
             properties:
@@ -202,6 +325,22 @@ components:
                 nickName:
                     type: string
                 sex:
+                    type: string
+        helloworld.v1.DriverOrderReply:
+            type: object
+            properties:
+                code:
+                    type: integer
+                    format: int32
+                message:
+                    type: string
+        helloworld.v1.DriverOrderRequest:
+            type: object
+            properties:
+                driverId:
+                    type: integer
+                    format: int32
+                orderCode:
                     type: string
         helloworld.v1.DriverRegisterReply:
             type: object
@@ -216,7 +355,25 @@ components:
                 userId:
                     type: integer
                     format: int32
-                idCard:
+                name:
+                    type: string
+                nickName:
+                    type: string
+                carAge:
+                    type: integer
+                    format: int32
+                mobile:
+                    type: string
+                fileId:
+                    type: integer
+                    format: int32
+                idCardFileId:
+                    type: string
+                driverLicenseFileId:
+                    type: string
+                drivingLicenseFileId:
+                    type: string
+                avatorFileId:
                     type: string
         helloworld.v1.DriverStatusReply:
             type: object
@@ -231,7 +388,29 @@ components:
                 id:
                     type: integer
                     format: int32
-                onlineStatus:
+                status:
+                    type: string
+        helloworld.v1.DriverUpdateReply:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+        helloworld.v1.DriverUpdateRequest:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: int32
+                name:
+                    type: string
+                nickName:
+                    type: string
+                carAge:
+                    type: integer
+                    format: int32
+                mobile:
                     type: string
         helloworld.v1.InfoUserReply:
             type: object
@@ -264,6 +443,21 @@ components:
                 mobile:
                     type: string
                 SendSmsCode:
+                    type: string
+        helloworld.v1.PayOrderReply:
+            type: object
+            properties:
+                code:
+                    type: integer
+                    format: int32
+                msg:
+                    type: string
+                payUrl:
+                    type: string
+        helloworld.v1.PayOrderRequest:
+            type: object
+            properties:
+                id:
                     type: string
         helloworld.v1.RealNameReply:
             type: object
@@ -304,5 +498,31 @@ components:
                     type: string
                 sex:
                     type: string
+        helloworld.v1.UserAddressReply:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+                address:
+                    type: string
+                province:
+                    type: string
+                city:
+                    type: string
+                district:
+                    type: string
+        helloworld.v1.UserAddressRequest:
+            type: object
+            properties:
+                userId:
+                    type: string
+                longitude:
+                    type: number
+                    format: double
+                latitude:
+                    type: number
+                    format: double
 tags:
     - name: Greeter
