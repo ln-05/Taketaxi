@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c78f94e1-de90-48e2-8240-044a5da4fd32" name="更改" comment="hu">
       <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zy14/helloworld/internal/pkg/sendSms.go" beforeDir="false" afterPath="$PROJECT_DIR$/zy14/helloworld/internal/pkg/sendSms.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
