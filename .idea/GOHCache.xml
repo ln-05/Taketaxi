@@ -1,0 +1,1891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="AcceptOrderRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="AcceptOrderResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="AddSearchHistoryRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="AddSearchHistoryResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Auth">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Baidu">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="BaiduMapConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/user.go" />
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="BaiduMapService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/user.go" />
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Bootstrap">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CheckWechatSignatureRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CheckWechatSignatureResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ClearSearchHistoryRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ClearSearchHistoryResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateTripRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateTripResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CustomClaims">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/jwt.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Data">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/helloworld/internal/data/data.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Data_Database">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Data_Redis">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteDriverRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteDriverResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteSearchHistoryRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteSearchHistoryResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverCheckInfo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverHTTPClientImpl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver_http.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverHomeData">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverHomeRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverHomeResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverInfo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverList">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverMessage">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/driver.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EndTripRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EndTripResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="FrequentLocation">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Gaode">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GeoConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/redis_geo.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GeoLocation">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/redis_geo.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GeoRadiusResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/redis_geo.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GeoSearchOptions">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/redis_geo.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GeoSearchResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/redis_geo.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GeoService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/redis_geo.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetCurrentOrderRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetCurrentOrderResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetCurrentRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetCurrentResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDriverCheckInfoRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDriverCheckInfoResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDriverMessagesRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDriverMessagesResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDriverOrderHistoryRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDriverOrderHistoryResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDriverRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDriverResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetOrderRuleRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetOrderRuleResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetSearchHistoryRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetSearchHistoryResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Greeter">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/biz/greeter.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GreeterHTTPClientImpl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/greeter_http.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GreeterService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/greeter.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GreeterUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/biz/greeter.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HelloReply">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/greeter.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HelloRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/greeter.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="JWT">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/jwt.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="JWTConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/middleware/auth.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListDriverRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListDriverResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Location">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginData">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginDriverRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginDriverResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhDriver">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhDriverCheck">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhOrder">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhOrderDetail">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhPassenger">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhPricingRules">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhSearchHistory">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MockUserClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/examples/test_ride_hailing.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Mongo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MongoConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/data/mongodb_client.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MongoConfigFactory">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/data/mongo_factory.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MongoDB">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/data/mongodb_client.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MongoOptions">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/data/mongodb_client.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderInfo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderRole">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderRule">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderStatusRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderStatusResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OriginDestinationRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OriginDestinationResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Path">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Place">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PlaceOrderRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PlaceOrderResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PlaceSearchResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PricingRule">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Real">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/RealNaem.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RealNameDriverRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RealNameDriverResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RealNameRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RealNameResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RegisterDriverRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RegisterDriverResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RejectOrderRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RejectOrderResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ResponseData">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/wechat.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Result">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RideHailingHistoryRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RideHailingHistoryResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RoutePlanning">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/route_planning.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RoutePlanningStats">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/route_planning.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RouteRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RouteResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RouteStep">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/route_planning.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SearchHistoryItem">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SendSmsRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SendSmsResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Server">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Server_GRPC">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Server_HTTP">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StartTripRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StartTripResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UnimplementedDriverServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UnimplementedGreeterServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/greeter_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UnimplementedUserServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateDriverCheckInfoRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateDriverCheckInfoResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateDriverLocationRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateDriverLocationResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateDriverRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateDriverResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UploadingOfflineStatusRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UploadingOfflineStatusResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserAuth">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserClaims">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/middleware/auth.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserHTTPClientImpl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user_http.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WeatherInfo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Wechat">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WechatHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/server/wechat_handler.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WechatLoginCallbackRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WechatLoginCallbackResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WechatLoginQrcodeRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WechatLoginQrcodeResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WechatService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/wechat.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WechatTokenResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/wechat.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WechatUserData">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/service/wechat.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WechatUserInfo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="driverClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="greeterClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/greeter_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="greeterRepo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/data/greeter.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="searchHistoryRepo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/internal/data/search_history.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="userClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="x">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go" />
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/error_reason.pb.go" />
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/greeter.pb.go" />
+              <option value="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104941" />
+              <option name="schema">
+                <list>
+                  <option value="RegisterDriverRequest" />
+                  <option value="RegisterDriverResponse" />
+                  <option value="LoginDriverRequest" />
+                  <option value="LoginDriverResponse" />
+                  <option value="LoginData" />
+                  <option value="DriverInfo" />
+                  <option value="UpdateDriverRequest" />
+                  <option value="UpdateDriverResponse" />
+                  <option value="DeleteDriverRequest" />
+                  <option value="DeleteDriverResponse" />
+                  <option value="GetDriverRequest" />
+                  <option value="GetDriverResponse" />
+                  <option value="ListDriverRequest" />
+                  <option value="ListDriverResponse" />
+                  <option value="DriverList" />
+                  <option value="RealNameDriverRequest" />
+                  <option value="RealNameDriverResponse" />
+                  <option value="UploadingOfflineStatusRequest" />
+                  <option value="UploadingOfflineStatusResponse" />
+                  <option value="DriverHomeRequest" />
+                  <option value="DriverHomeResponse" />
+                  <option value="DriverHomeData" />
+                  <option value="AcceptOrderRequest" />
+                  <option value="AcceptOrderResponse" />
+                  <option value="RejectOrderRequest" />
+                  <option value="RejectOrderResponse" />
+                  <option value="StartTripRequest" />
+                  <option value="StartTripResponse" />
+                  <option value="EndTripRequest" />
+                  <option value="EndTripResponse" />
+                  <option value="OrderStatusRequest" />
+                  <option value="OrderStatusResponse" />
+                  <option value="GetOrderRuleRequest" />
+                  <option value="GetOrderRuleResponse" />
+                  <option value="OrderRule" />
+                  <option value="GetDriverMessagesRequest" />
+                  <option value="GetDriverMessagesResponse" />
+                  <option value="DriverMessage" />
+                  <option value="GetCurrentOrderRequest" />
+                  <option value="GetCurrentOrderResponse" />
+                  <option value="GetDriverOrderHistoryRequest" />
+                  <option value="GetDriverOrderHistoryResponse" />
+                  <option value="UpdateDriverLocationRequest" />
+                  <option value="UpdateDriverLocationResponse" />
+                  <option value="OrderInfo" />
+                  <option value="UpdateDriverCheckInfoRequest" />
+                  <option value="UpdateDriverCheckInfoResponse" />
+                  <option value="GetDriverCheckInfoRequest" />
+                  <option value="GetDriverCheckInfoResponse" />
+                  <option value="DriverCheckInfo" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver_grpc.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104958" />
+              <option name="schema">
+                <list>
+                  <option value="driverClient" />
+                  <option value="UnimplementedDriverServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/driver_http.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104957" />
+              <option name="schema">
+                <list>
+                  <option value="DriverHTTPClientImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/error_reason.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104952" />
+              <option name="schema">
+                <list>
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/greeter.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104960" />
+              <option name="schema">
+                <list>
+                  <option value="HelloRequest" />
+                  <option value="HelloReply" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/greeter_grpc.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104952" />
+              <option name="schema">
+                <list>
+                  <option value="greeterClient" />
+                  <option value="UnimplementedGreeterServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/greeter_http.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104949" />
+              <option name="schema">
+                <list>
+                  <option value="GreeterHTTPClientImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104968" />
+              <option name="schema">
+                <list>
+                  <option value="RideHailingHistoryRequest" />
+                  <option value="RideHailingHistoryResponse" />
+                  <option value="CreateTripRequest" />
+                  <option value="CreateTripResponse" />
+                  <option value="OriginDestinationRequest" />
+                  <option value="FrequentLocation" />
+                  <option value="OriginDestinationResponse" />
+                  <option value="GetCurrentRequest" />
+                  <option value="GetCurrentResponse" />
+                  <option value="Place" />
+                  <option value="CheckWechatSignatureRequest" />
+                  <option value="CheckWechatSignatureResponse" />
+                  <option value="WechatLoginQrcodeRequest" />
+                  <option value="WechatLoginQrcodeResponse" />
+                  <option value="WechatLoginCallbackRequest" />
+                  <option value="WechatLoginCallbackResponse" />
+                  <option value="WechatUserInfo" />
+                  <option value="PlaceOrderRequest" />
+                  <option value="PlaceOrderResponse" />
+                  <option value="RealNameRequest" />
+                  <option value="RealNameResponse" />
+                  <option value="LoginRequest" />
+                  <option value="LoginResponse" />
+                  <option value="SendSmsRequest" />
+                  <option value="SendSmsResponse" />
+                  <option value="SearchHistoryItem" />
+                  <option value="GetSearchHistoryRequest" />
+                  <option value="GetSearchHistoryResponse" />
+                  <option value="AddSearchHistoryRequest" />
+                  <option value="AddSearchHistoryResponse" />
+                  <option value="DeleteSearchHistoryRequest" />
+                  <option value="DeleteSearchHistoryResponse" />
+                  <option value="ClearSearchHistoryRequest" />
+                  <option value="ClearSearchHistoryResponse" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user_grpc.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104960" />
+              <option name="schema">
+                <list>
+                  <option value="userClient" />
+                  <option value="UnimplementedUserServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/api/helloworld/v1/user_http.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104960" />
+              <option name="schema">
+                <list>
+                  <option value="UserHTTPClientImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/cmd/helloworld/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104977" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/cmd/helloworld/wire.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104974" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/cmd/helloworld/wire_gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104970" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/examples/simple_test.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752284588831" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/examples/test_driver_location.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752284617898" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/examples/test_geo_service.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752284617882" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/examples/test_ride_hailing.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752284617882" />
+              <option name="schema">
+                <list>
+                  <option value="MockUserClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/biz/biz.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104882" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/biz/greeter.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104878" />
+              <option name="schema">
+                <list>
+                  <option value="Greeter" />
+                  <option value="GreeterUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/conf/conf.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752294150951" />
+              <option name="schema">
+                <list>
+                  <option value="Bootstrap" />
+                  <option value="Server" />
+                  <option value="Mongo" />
+                  <option value="Data" />
+                  <option value="Wechat" />
+                  <option value="Gaode" />
+                  <option value="Baidu" />
+                  <option value="Server_HTTP" />
+                  <option value="Server_GRPC" />
+                  <option value="Data_Database" />
+                  <option value="Data_Redis" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/data/data.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104871" />
+              <option name="schema">
+                <list>
+                  <option value="Data" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/data/greeter.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104869" />
+              <option name="schema">
+                <list>
+                  <option value="greeterRepo" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/data/mongo_factory.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104867" />
+              <option name="schema">
+                <list>
+                  <option value="MongoConfigFactory" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/data/mongodb_client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104861" />
+              <option name="schema">
+                <list>
+                  <option value="MongoConfig" />
+                  <option value="MongoOptions" />
+                  <option value="MongoDB" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/data/search_history.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104861" />
+              <option name="schema">
+                <list>
+                  <option value="searchHistoryRepo" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/middleware/auth.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104819" />
+              <option name="schema">
+                <list>
+                  <option value="JWTConfig" />
+                  <option value="UserClaims" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/model/lxh.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104858" />
+              <option name="schema">
+                <list>
+                  <option value="Auth" />
+                  <option value="LxhDriver" />
+                  <option value="LxhDriverCheck" />
+                  <option value="LxhOrder" />
+                  <option value="LxhOrderDetail" />
+                  <option value="OrderRole" />
+                  <option value="LxhPricingRules" />
+                  <option value="LxhPassenger" />
+                  <option value="User" />
+                  <option value="UserAuth" />
+                  <option value="LxhSearchHistory" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/model/model.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104858" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/model/route_planning.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104857" />
+              <option name="schema">
+                <list>
+                  <option value="RoutePlanning" />
+                  <option value="RouteStep" />
+                  <option value="RoutePlanningStats" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/server/grpc.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104852" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/server/http.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104852" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/server/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104848" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/server/wechat_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104838" />
+              <option name="schema">
+                <list>
+                  <option value="WechatHandler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/service/driver.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104822" />
+              <option name="schema">
+                <list>
+                  <option value="DriverService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/service/greeter.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104827" />
+              <option name="schema">
+                <list>
+                  <option value="GreeterService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/service/search_history.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104826" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/service/service.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104827" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/service/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104822" />
+              <option name="schema">
+                <list>
+                  <option value="UserService" />
+                  <option value="PricingRule" />
+                  <option value="BaiduMapConfig" />
+                  <option value="BaiduMapService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/internal/service/wechat.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104827" />
+              <option name="schema">
+                <list>
+                  <option value="WechatService" />
+                  <option value="WechatTokenResp" />
+                  <option value="WechatUserData" />
+                  <option value="ResponseData" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/pkg/BaiDu.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752293175771" />
+              <option name="schema">
+                <list>
+                  <option value="BaiduMapConfig" />
+                  <option value="BaiduMapService" />
+                  <option value="Location" />
+                  <option value="RouteRequest" />
+                  <option value="Path" />
+                  <option value="RouteResponse" />
+                  <option value="PlaceSearchResult" />
+                  <option value="WeatherInfo" />
+                  <option value="Result" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/pkg/RealNaem.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104901" />
+              <option name="schema">
+                <list>
+                  <option value="Real" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/pkg/jwt.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104888" />
+              <option name="schema">
+                <list>
+                  <option value="CustomClaims" />
+                  <option value="JWT" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/pkg/redis_geo.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104899" />
+              <option name="schema">
+                <list>
+                  <option value="GeoLocation" />
+                  <option value="GeoRadiusResult" />
+                  <option value="GeoSearchResult" />
+                  <option value="GeoConfig" />
+                  <option value="GeoService" />
+                  <option value="GeoSearchOptions" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/helloworld/pkg/redis_geo_example.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752291104888" />
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="accept_order_request" value="AcceptOrderRequest" />
+        <entry key="accept_order_response" value="AcceptOrderResponse" />
+        <entry key="add_search_history_request" value="AddSearchHistoryRequest" />
+        <entry key="add_search_history_response" value="AddSearchHistoryResponse" />
+        <entry key="auth" value="Auth" />
+        <entry key="baidu" value="Baidu" />
+        <entry key="baidu_map_config" value="BaiduMapConfig" />
+        <entry key="baidu_map_service" value="BaiduMapService" />
+        <entry key="bootstrap" value="Bootstrap" />
+        <entry key="check_wechat_signature_request" value="CheckWechatSignatureRequest" />
+        <entry key="check_wechat_signature_response" value="CheckWechatSignatureResponse" />
+        <entry key="clear_search_history_request" value="ClearSearchHistoryRequest" />
+        <entry key="clear_search_history_response" value="ClearSearchHistoryResponse" />
+        <entry key="create_trip_request" value="CreateTripRequest" />
+        <entry key="create_trip_response" value="CreateTripResponse" />
+        <entry key="custom_claims" value="CustomClaims" />
+        <entry key="data" value="Data" />
+        <entry key="data__database" value="Data_Database" />
+        <entry key="data__redis" value="Data_Redis" />
+        <entry key="delete_driver_request" value="DeleteDriverRequest" />
+        <entry key="delete_driver_response" value="DeleteDriverResponse" />
+        <entry key="delete_search_history_request" value="DeleteSearchHistoryRequest" />
+        <entry key="delete_search_history_response" value="DeleteSearchHistoryResponse" />
+        <entry key="driver_check_info" value="DriverCheckInfo" />
+        <entry key="driver_client" value="driverClient" />
+        <entry key="driver_home_data" value="DriverHomeData" />
+        <entry key="driver_home_request" value="DriverHomeRequest" />
+        <entry key="driver_home_response" value="DriverHomeResponse" />
+        <entry key="driver_http_client_impl" value="DriverHTTPClientImpl" />
+        <entry key="driver_info" value="DriverInfo" />
+        <entry key="driver_list" value="DriverList" />
+        <entry key="driver_message" value="DriverMessage" />
+        <entry key="driver_service" value="DriverService" />
+        <entry key="end_trip_request" value="EndTripRequest" />
+        <entry key="end_trip_response" value="EndTripResponse" />
+        <entry key="frequent_location" value="FrequentLocation" />
+        <entry key="gaode" value="Gaode" />
+        <entry key="geo_config" value="GeoConfig" />
+        <entry key="geo_location" value="GeoLocation" />
+        <entry key="geo_radius_result" value="GeoRadiusResult" />
+        <entry key="geo_search_options" value="GeoSearchOptions" />
+        <entry key="geo_search_result" value="GeoSearchResult" />
+        <entry key="geo_service" value="GeoService" />
+        <entry key="get_current_order_request" value="GetCurrentOrderRequest" />
+        <entry key="get_current_order_response" value="GetCurrentOrderResponse" />
+        <entry key="get_current_request" value="GetCurrentRequest" />
+        <entry key="get_current_response" value="GetCurrentResponse" />
+        <entry key="get_driver_check_info_request" value="GetDriverCheckInfoRequest" />
+        <entry key="get_driver_check_info_response" value="GetDriverCheckInfoResponse" />
+        <entry key="get_driver_messages_request" value="GetDriverMessagesRequest" />
+        <entry key="get_driver_messages_response" value="GetDriverMessagesResponse" />
+        <entry key="get_driver_order_history_request" value="GetDriverOrderHistoryRequest" />
+        <entry key="get_driver_order_history_response" value="GetDriverOrderHistoryResponse" />
+        <entry key="get_driver_request" value="GetDriverRequest" />
+        <entry key="get_driver_response" value="GetDriverResponse" />
+        <entry key="get_order_rule_request" value="GetOrderRuleRequest" />
+        <entry key="get_order_rule_response" value="GetOrderRuleResponse" />
+        <entry key="get_search_history_request" value="GetSearchHistoryRequest" />
+        <entry key="get_search_history_response" value="GetSearchHistoryResponse" />
+        <entry key="greeter" value="Greeter" />
+        <entry key="greeter_client" value="greeterClient" />
+        <entry key="greeter_http_client_impl" value="GreeterHTTPClientImpl" />
+        <entry key="greeter_repo" value="greeterRepo" />
+        <entry key="greeter_service" value="GreeterService" />
+        <entry key="greeter_usecase" value="GreeterUsecase" />
+        <entry key="hello_reply" value="HelloReply" />
+        <entry key="hello_request" value="HelloRequest" />
+        <entry key="jwt" value="JWT" />
+        <entry key="jwt_config" value="JWTConfig" />
+        <entry key="list_driver_request" value="ListDriverRequest" />
+        <entry key="list_driver_response" value="ListDriverResponse" />
+        <entry key="location" value="Location" />
+        <entry key="login_data" value="LoginData" />
+        <entry key="login_driver_request" value="LoginDriverRequest" />
+        <entry key="login_driver_response" value="LoginDriverResponse" />
+        <entry key="login_request" value="LoginRequest" />
+        <entry key="login_response" value="LoginResponse" />
+        <entry key="lxh_driver" value="LxhDriver" />
+        <entry key="lxh_driver_check" value="LxhDriverCheck" />
+        <entry key="lxh_order" value="LxhOrder" />
+        <entry key="lxh_order_detail" value="LxhOrderDetail" />
+        <entry key="lxh_passenger" value="LxhPassenger" />
+        <entry key="lxh_pricing_rules" value="LxhPricingRules" />
+        <entry key="lxh_search_history" value="LxhSearchHistory" />
+        <entry key="mock_user_client" value="MockUserClient" />
+        <entry key="mongo" value="Mongo" />
+        <entry key="mongo_config" value="MongoConfig" />
+        <entry key="mongo_config_factory" value="MongoConfigFactory" />
+        <entry key="mongo_db" value="MongoDB" />
+        <entry key="mongo_options" value="MongoOptions" />
+        <entry key="order_info" value="OrderInfo" />
+        <entry key="order_role" value="OrderRole" />
+        <entry key="order_rule" value="OrderRule" />
+        <entry key="order_status_request" value="OrderStatusRequest" />
+        <entry key="order_status_response" value="OrderStatusResponse" />
+        <entry key="origin_destination_request" value="OriginDestinationRequest" />
+        <entry key="origin_destination_response" value="OriginDestinationResponse" />
+        <entry key="path" value="Path" />
+        <entry key="place" value="Place" />
+        <entry key="place_order_request" value="PlaceOrderRequest" />
+        <entry key="place_order_response" value="PlaceOrderResponse" />
+        <entry key="place_search_result" value="PlaceSearchResult" />
+        <entry key="pricing_rule" value="PricingRule" />
+        <entry key="real" value="Real" />
+        <entry key="real_name_driver_request" value="RealNameDriverRequest" />
+        <entry key="real_name_driver_response" value="RealNameDriverResponse" />
+        <entry key="real_name_request" value="RealNameRequest" />
+        <entry key="real_name_response" value="RealNameResponse" />
+        <entry key="register_driver_request" value="RegisterDriverRequest" />
+        <entry key="register_driver_response" value="RegisterDriverResponse" />
+        <entry key="reject_order_request" value="RejectOrderRequest" />
+        <entry key="reject_order_response" value="RejectOrderResponse" />
+        <entry key="response_data" value="ResponseData" />
+        <entry key="result" value="Result" />
+        <entry key="ride_hailing_history_request" value="RideHailingHistoryRequest" />
+        <entry key="ride_hailing_history_response" value="RideHailingHistoryResponse" />
+        <entry key="route_planning" value="RoutePlanning" />
+        <entry key="route_planning_stats" value="RoutePlanningStats" />
+        <entry key="route_request" value="RouteRequest" />
+        <entry key="route_response" value="RouteResponse" />
+        <entry key="route_step" value="RouteStep" />
+        <entry key="search_history_item" value="SearchHistoryItem" />
+        <entry key="search_history_repo" value="searchHistoryRepo" />
+        <entry key="send_sms_request" value="SendSmsRequest" />
+        <entry key="send_sms_response" value="SendSmsResponse" />
+        <entry key="server" value="Server" />
+        <entry key="server_grpc" value="Server_GRPC" />
+        <entry key="server_http" value="Server_HTTP" />
+        <entry key="start_trip_request" value="StartTripRequest" />
+        <entry key="start_trip_response" value="StartTripResponse" />
+        <entry key="unimplemented_driver_server" value="UnimplementedDriverServer" />
+        <entry key="unimplemented_greeter_server" value="UnimplementedGreeterServer" />
+        <entry key="unimplemented_user_server" value="UnimplementedUserServer" />
+        <entry key="update_driver_check_info_request" value="UpdateDriverCheckInfoRequest" />
+        <entry key="update_driver_check_info_response" value="UpdateDriverCheckInfoResponse" />
+        <entry key="update_driver_location_request" value="UpdateDriverLocationRequest" />
+        <entry key="update_driver_location_response" value="UpdateDriverLocationResponse" />
+        <entry key="update_driver_request" value="UpdateDriverRequest" />
+        <entry key="update_driver_response" value="UpdateDriverResponse" />
+        <entry key="uploading_offline_status_request" value="UploadingOfflineStatusRequest" />
+        <entry key="uploading_offline_status_response" value="UploadingOfflineStatusResponse" />
+        <entry key="user" value="User" />
+        <entry key="user_auth" value="UserAuth" />
+        <entry key="user_claims" value="UserClaims" />
+        <entry key="user_client" value="userClient" />
+        <entry key="user_http_client_impl" value="UserHTTPClientImpl" />
+        <entry key="user_service" value="UserService" />
+        <entry key="weather_info" value="WeatherInfo" />
+        <entry key="wechat" value="Wechat" />
+        <entry key="wechat_handler" value="WechatHandler" />
+        <entry key="wechat_login_callback_request" value="WechatLoginCallbackRequest" />
+        <entry key="wechat_login_callback_response" value="WechatLoginCallbackResponse" />
+        <entry key="wechat_login_qrcode_request" value="WechatLoginQrcodeRequest" />
+        <entry key="wechat_login_qrcode_response" value="WechatLoginQrcodeResponse" />
+        <entry key="wechat_service" value="WechatService" />
+        <entry key="wechat_token_resp" value="WechatTokenResp" />
+        <entry key="wechat_user_data" value="WechatUserData" />
+        <entry key="wechat_user_info" value="WechatUserInfo" />
+        <entry key="x" value="x" />
+      </map>
+    </option>
+    <option name="lastTimeChecked" value="1752231643689" />
+  </component>
+</project>
