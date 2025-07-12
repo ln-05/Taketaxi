@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="Auth">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="BaiduMapResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/baiduMap.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="BaiduMapService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/baiduMap.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Bootstrap">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Censor">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/aduit.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CoordinateConvertResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/baiduMap.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateTripRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateTripResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateUserOrderRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateUserOrderResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CustomClaims">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/jwt.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Data">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/conf/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/data/data.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Data_Database">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Data_Redis">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverAcceptOrderRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverAcceptOrderResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverDepartRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverDepartResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverEvaluation">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverHTTPClientImpl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver_http.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverLoginRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/driver.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverLoginResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/driver.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverSendSmsRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/driver.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverSendSmsResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/driver.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DriverService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/service/driver.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetCurrentLocationRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetCurrentLocationResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetUserLocationRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetUserLocationResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Greeter">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/biz/greeter.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GreeterHTTPClientImpl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/greeter_http.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GreeterService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/service/greeter.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GreeterUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/biz/greeter.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HelloReply">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/greeter.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/greeter.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HelloRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/greeter.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/greeter.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HomeStatRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HomeStatResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="JWT">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/jwt.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LocationInfo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/baiduMap.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhDriver">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhDriverCheck">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhOrder">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhOrderDetail">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LxhPassenger">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Real">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/realname.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RealNameRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RealNameResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SaveUserLocationRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SaveUserLocationResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Server">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Server_GRPC">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Server_HTTP">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/conf/conf.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UnimplementedDriverServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UnimplementedGreeterServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/greeter_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UnimplementedUserServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateDriverRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/driver.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateDriverResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/driver.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserAuth">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserCommentDriverRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserCommentDriverResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserHTTPClientImpl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user_http.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserLoginRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserLoginResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserSearchHistory">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserSearchRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserSearchResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserSendSmsRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserSendSmsResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserService">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/service/user.go" />
+              <option value="file://$PROJECT_DIR$/../zy14/helloworld/internal/service/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserUpdateRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserUpdateResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="driverClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="greeterClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/greeter_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="greeterRepo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/data/greeter.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="userClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="x">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/zy14/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/driver.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/error_reason.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/greeter.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/error_reason.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/greeter.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/helloworld/internal/conf/conf.pb.go" />
+              <option value="file://$PROJECT_DIR$/zy14/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/zy14/conf.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752133747159" />
+              <option name="schema">
+                <list>
+                  <option value="Bootstrap" />
+                  <option value="Server" />
+                  <option value="Data" />
+                  <option value="Server_HTTP" />
+                  <option value="Server_GRPC" />
+                  <option value="Data_Database" />
+                  <option value="Data_Redis" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/driver.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752133764529" />
+              <option name="schema">
+                <list>
+                  <option value="DriverSendSmsRequest" />
+                  <option value="DriverSendSmsResponse" />
+                  <option value="DriverLoginRequest" />
+                  <option value="DriverLoginResponse" />
+                  <option value="UpdateDriverRequest" />
+                  <option value="UpdateDriverResponse" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/error_reason.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752133764529" />
+              <option name="schema">
+                <list>
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/greeter.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752133764529" />
+              <option name="schema">
+                <list>
+                  <option value="HelloRequest" />
+                  <option value="HelloReply" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752242212768" />
+              <option name="schema">
+                <list>
+                  <option value="DriverSendSmsRequest" />
+                  <option value="DriverSendSmsResponse" />
+                  <option value="DriverLoginRequest" />
+                  <option value="DriverLoginResponse" />
+                  <option value="UpdateDriverRequest" />
+                  <option value="UpdateDriverResponse" />
+                  <option value="RealNameRequest" />
+                  <option value="RealNameResponse" />
+                  <option value="HomeStatRequest" />
+                  <option value="HomeStatResponse" />
+                  <option value="DriverDepartRequest" />
+                  <option value="DriverDepartResponse" />
+                  <option value="DriverAcceptOrderRequest" />
+                  <option value="DriverAcceptOrderResponse" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver_grpc.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752242212768" />
+              <option name="schema">
+                <list>
+                  <option value="driverClient" />
+                  <option value="UnimplementedDriverServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/driver_http.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752242212768" />
+              <option name="schema">
+                <list>
+                  <option value="DriverHTTPClientImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/error_reason.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801990593" />
+              <option name="schema">
+                <list>
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/greeter.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801990631" />
+              <option name="schema">
+                <list>
+                  <option value="HelloRequest" />
+                  <option value="HelloReply" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/greeter_grpc.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801990686" />
+              <option name="schema">
+                <list>
+                  <option value="greeterClient" />
+                  <option value="UnimplementedGreeterServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/greeter_http.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801990723" />
+              <option name="schema">
+                <list>
+                  <option value="GreeterHTTPClientImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752200001513" />
+              <option name="schema">
+                <list>
+                  <option value="UserSendSmsRequest" />
+                  <option value="UserSendSmsResponse" />
+                  <option value="UserLoginRequest" />
+                  <option value="UserLoginResponse" />
+                  <option value="UserUpdateRequest" />
+                  <option value="UserUpdateResponse" />
+                  <option value="UserSearchRequest" />
+                  <option value="UserSearchResponse" />
+                  <option value="CreateUserOrderRequest" />
+                  <option value="CreateUserOrderResponse" />
+                  <option value="UserCommentDriverRequest" />
+                  <option value="UserCommentDriverResponse" />
+                  <option value="CreateTripRequest" />
+                  <option value="CreateTripResponse" />
+                  <option value="GetCurrentLocationRequest" />
+                  <option value="GetCurrentLocationResponse" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user_grpc.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752200001513" />
+              <option name="schema">
+                <list>
+                  <option value="userClient" />
+                  <option value="UnimplementedUserServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/api/helloworld/v1/user_http.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752200001513" />
+              <option name="schema">
+                <list>
+                  <option value="UserHTTPClientImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/cmd/helloworld/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752149759913" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/cmd/helloworld/wire.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752223039807" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/cmd/helloworld/wire_gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752147004080" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/helloworld/api/helloworld/v1/user.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752147140816" />
+              <option name="schema">
+                <list>
+                  <option value="UserSendSmsRequest" />
+                  <option value="UserSendSmsResponse" />
+                  <option value="UserLoginRequest" />
+                  <option value="UserLoginResponse" />
+                  <option value="UserUpdateRequest" />
+                  <option value="UserUpdateResponse" />
+                  <option value="UserSearchRequest" />
+                  <option value="UserSearchResponse" />
+                  <option value="CreateUserOrderRequest" />
+                  <option value="CreateUserOrderResponse" />
+                  <option value="UserCommentDriverRequest" />
+                  <option value="UserCommentDriverResponse" />
+                  <option value="GetUserLocationRequest" />
+                  <option value="GetUserLocationResponse" />
+                  <option value="SaveUserLocationRequest" />
+                  <option value="SaveUserLocationResponse" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/biz/biz.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801990879" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/biz/greeter.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801990906" />
+              <option name="schema">
+                <list>
+                  <option value="Greeter" />
+                  <option value="GreeterUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/conf/conf.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752146160907" />
+              <option name="schema">
+                <list>
+                  <option value="Bootstrap" />
+                  <option value="Server" />
+                  <option value="Data" />
+                  <option value="Server_HTTP" />
+                  <option value="Server_GRPC" />
+                  <option value="Data_Database" />
+                  <option value="Data_Redis" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/data/data.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752147128334" />
+              <option name="schema">
+                <list>
+                  <option value="Data" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/data/greeter.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801991019" />
+              <option name="schema">
+                <list>
+                  <option value="greeterRepo" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/model/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752283556412" />
+              <option name="schema">
+                <list>
+                  <option value="Auth" />
+                  <option value="LxhDriver" />
+                  <option value="LxhDriverCheck" />
+                  <option value="LxhOrder" />
+                  <option value="LxhOrderDetail" />
+                  <option value="LxhPassenger" />
+                  <option value="User" />
+                  <option value="UserAuth" />
+                  <option value="DriverEvaluation" />
+                  <option value="UserSearchHistory" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/aduit.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749485170151" />
+              <option name="schema">
+                <list>
+                  <option value="Censor" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/baiduMap.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752283556930" />
+              <option name="schema">
+                <list>
+                  <option value="LocationInfo" />
+                  <option value="BaiduMapResponse" />
+                  <option value="CoordinateConvertResponse" />
+                  <option value="BaiduMapService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/jwt.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1750126585489" />
+              <option name="schema">
+                <list>
+                  <option value="CustomClaims" />
+                  <option value="JWT" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/realname.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752233290026" />
+              <option name="schema">
+                <list>
+                  <option value="Real" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/regexp.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1750090783176" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/pkg/sendSms.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751857793220" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/server/grpc.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801991039" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/server/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752221243442" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/service/driver.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752283597122" />
+              <option name="schema">
+                <list>
+                  <option value="DriverService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/service/greeter.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801991116" />
+              <option name="schema">
+                <list>
+                  <option value="GreeterService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/service/service.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1751801991130" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/helloworld/internal/service/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752288420119" />
+              <option name="schema">
+                <list>
+                  <option value="UserService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/zy14/user.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752133764529" />
+              <option name="schema">
+                <list>
+                  <option value="UserSendSmsRequest" />
+                  <option value="UserSendSmsResponse" />
+                  <option value="UserLoginRequest" />
+                  <option value="UserLoginResponse" />
+                  <option value="UserUpdateRequest" />
+                  <option value="UserUpdateResponse" />
+                  <option value="UserSearchRequest" />
+                  <option value="UserSearchResponse" />
+                  <option value="CreateUserOrderRequest" />
+                  <option value="CreateUserOrderResponse" />
+                  <option value="UserCommentDriverRequest" />
+                  <option value="UserCommentDriverResponse" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/../zy14/helloworld/internal/service/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752290404280" />
+              <option name="schema">
+                <list>
+                  <option value="UserService" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="auth" value="Auth" />
+        <entry key="baidu_map_response" value="BaiduMapResponse" />
+        <entry key="baidu_map_service" value="BaiduMapService" />
+        <entry key="bootstrap" value="Bootstrap" />
+        <entry key="censor" value="Censor" />
+        <entry key="coordinate_convert_response" value="CoordinateConvertResponse" />
+        <entry key="create_trip_request" value="CreateTripRequest" />
+        <entry key="create_trip_response" value="CreateTripResponse" />
+        <entry key="create_user_order_request" value="CreateUserOrderRequest" />
+        <entry key="create_user_order_response" value="CreateUserOrderResponse" />
+        <entry key="custom_claims" value="CustomClaims" />
+        <entry key="data" value="Data" />
+        <entry key="data__database" value="Data_Database" />
+        <entry key="data__redis" value="Data_Redis" />
+        <entry key="driver_accept_order_request" value="DriverAcceptOrderRequest" />
+        <entry key="driver_accept_order_response" value="DriverAcceptOrderResponse" />
+        <entry key="driver_client" value="driverClient" />
+        <entry key="driver_depart_request" value="DriverDepartRequest" />
+        <entry key="driver_depart_response" value="DriverDepartResponse" />
+        <entry key="driver_evaluation" value="DriverEvaluation" />
+        <entry key="driver_http_client_impl" value="DriverHTTPClientImpl" />
+        <entry key="driver_login_request" value="DriverLoginRequest" />
+        <entry key="driver_login_response" value="DriverLoginResponse" />
+        <entry key="driver_send_sms_request" value="DriverSendSmsRequest" />
+        <entry key="driver_send_sms_response" value="DriverSendSmsResponse" />
+        <entry key="driver_service" value="DriverService" />
+        <entry key="get_current_location_request" value="GetCurrentLocationRequest" />
+        <entry key="get_current_location_response" value="GetCurrentLocationResponse" />
+        <entry key="get_user_location_request" value="GetUserLocationRequest" />
+        <entry key="get_user_location_response" value="GetUserLocationResponse" />
+        <entry key="greeter" value="Greeter" />
+        <entry key="greeter_client" value="greeterClient" />
+        <entry key="greeter_http_client_impl" value="GreeterHTTPClientImpl" />
+        <entry key="greeter_repo" value="greeterRepo" />
+        <entry key="greeter_service" value="GreeterService" />
+        <entry key="greeter_usecase" value="GreeterUsecase" />
+        <entry key="hello_reply" value="HelloReply" />
+        <entry key="hello_request" value="HelloRequest" />
+        <entry key="home_stat_request" value="HomeStatRequest" />
+        <entry key="home_stat_response" value="HomeStatResponse" />
+        <entry key="jwt" value="JWT" />
+        <entry key="location_info" value="LocationInfo" />
+        <entry key="lxh_driver" value="LxhDriver" />
+        <entry key="lxh_driver_check" value="LxhDriverCheck" />
+        <entry key="lxh_order" value="LxhOrder" />
+        <entry key="lxh_order_detail" value="LxhOrderDetail" />
+        <entry key="lxh_passenger" value="LxhPassenger" />
+        <entry key="real" value="Real" />
+        <entry key="real_name_request" value="RealNameRequest" />
+        <entry key="real_name_response" value="RealNameResponse" />
+        <entry key="save_user_location_request" value="SaveUserLocationRequest" />
+        <entry key="save_user_location_response" value="SaveUserLocationResponse" />
+        <entry key="server" value="Server" />
+        <entry key="server_grpc" value="Server_GRPC" />
+        <entry key="server_http" value="Server_HTTP" />
+        <entry key="unimplemented_driver_server" value="UnimplementedDriverServer" />
+        <entry key="unimplemented_greeter_server" value="UnimplementedGreeterServer" />
+        <entry key="unimplemented_user_server" value="UnimplementedUserServer" />
+        <entry key="update_driver_request" value="UpdateDriverRequest" />
+        <entry key="update_driver_response" value="UpdateDriverResponse" />
+        <entry key="user" value="User" />
+        <entry key="user_auth" value="UserAuth" />
+        <entry key="user_client" value="userClient" />
+        <entry key="user_comment_driver_request" value="UserCommentDriverRequest" />
+        <entry key="user_comment_driver_response" value="UserCommentDriverResponse" />
+        <entry key="user_http_client_impl" value="UserHTTPClientImpl" />
+        <entry key="user_login_request" value="UserLoginRequest" />
+        <entry key="user_login_response" value="UserLoginResponse" />
+        <entry key="user_search_history" value="UserSearchHistory" />
+        <entry key="user_search_request" value="UserSearchRequest" />
+        <entry key="user_search_response" value="UserSearchResponse" />
+        <entry key="user_send_sms_request" value="UserSendSmsRequest" />
+        <entry key="user_send_sms_response" value="UserSendSmsResponse" />
+        <entry key="user_service" value="UserService" />
+        <entry key="user_update_request" value="UserUpdateRequest" />
+        <entry key="user_update_response" value="UserUpdateResponse" />
+        <entry key="x" value="x" />
+      </map>
+    </option>
+    <option name="lastTimeChecked" value="1752289636981" />
+  </component>
+</project>
