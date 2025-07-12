@@ -188,7 +188,6 @@ func (c *GreeterService) InfoUser(_ context.Context, in *v1.InfoUserRequest) (*v
 // 实名认证
 func (c *GreeterService) RealName(_ context.Context, in *v1.RealNameRequest) (*v1.RealNameReply, error) {
 
-	log.Printf("请求参数 - UserID: %d, RealName: '%s', IdCard: '%s'", in.UserId, in.RealName, in.IdCard)
 	if in.UserId == 0 || in.RealName == "" || in.IdCard == "" {
 		return &v1.RealNameReply{
 			Code:    500,
@@ -249,8 +248,8 @@ func (c *GreeterService) CreateTrip(_ context.Context, in *v1.CreateTripRequest)
 		TotalFare:         price,
 		CreateTime:        t,
 	}
-	if err := c.db.GetDB().Create(trip).Error; err != nil {
-		return nil, fmt.Errorf("创建行程失败: %v", err)
+	if err = c.db.GetDB().Create(trip).Error; err != nil {
+		return nil, fmt.Errorf("创建行程失败")
 	}
 
 	newString := uuid.NewString()
@@ -265,7 +264,7 @@ func (c *GreeterService) CreateTrip(_ context.Context, in *v1.CreateTripRequest)
 		Amount:      price,
 		StartTime:   t,
 	}
-	if err := c.db.GetDB().Create(order).Error; err != nil {
+	if err = c.db.GetDB().Create(order).Error; err != nil {
 		return nil, fmt.Errorf("创建订单失败")
 	}
 
@@ -278,7 +277,7 @@ func (c *GreeterService) CreateTrip(_ context.Context, in *v1.CreateTripRequest)
 }
 
 // 支付
-func (c *GreeterService) PayOrder(ctx context.Context, in *v1.PayOrderRequest) (*v1.PayOrderReply, error) {
+func (c *GreeterService) PayOrder(_ context.Context, in *v1.PayOrderRequest) (*v1.PayOrderReply, error) {
 	var order biz.LxhOrder
 	if err := c.db.GetDB().Where("id = ?", in.Id).First(&order).Error; err != nil {
 		return &v1.PayOrderReply{
@@ -287,7 +286,7 @@ func (c *GreeterService) PayOrder(ctx context.Context, in *v1.PayOrderRequest) (
 		}, nil
 	}
 
-	payURL := pkg.AliPay(order.OrderCode, order.OrderCode, fmt.Sprintf("%.2f", order.Amount), "QUICK_WAP_WAY")
+	payURL := pkg.AliPay(order.OrderCode, order.OrderCode, fmt.Sprintf("%.2f", order.Amount))
 	if payURL == "" {
 		return &v1.PayOrderReply{
 			Code: 500,
