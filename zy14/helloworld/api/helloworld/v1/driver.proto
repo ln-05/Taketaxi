@@ -1,0 +1,171 @@
+syntax = "proto3";
+
+package api.helloworld.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "helloworld/api/helloworld/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.helloworld.v1";
+
+//司机服务
+service Driver {
+	//短信发送
+	rpc SendSms (DriverSendSmsRequest) returns (DriverSendSmsResponse) {
+		option (google.api.http) = {
+			post: "/v1/driver/sendSms"
+			body: "*"
+		};
+	}
+
+	//登录注册一体化
+	rpc Login (DriverLoginRequest) returns (DriverLoginResponse) {
+		option (google.api.http) = {
+			post: "/v1/driver/login"
+			body: "*"
+		};
+	}
+
+	//完善信息
+	rpc Update (UpdateDriverRequest) returns (UpdateDriverResponse) {
+		option (google.api.http) = {
+			post: "/v1/driver/update"
+			body: "*"
+		};
+	}
+
+	// 司机实名认证请求
+	rpc RealName (RealNameRequest) returns (RealNameResponse) {
+		option (google.api.http) = {
+			post: "/v1/driver/realName"
+			body: "*"
+		};
+	}
+
+	// 首页统计数据请求
+	rpc HomeStat (HomeStatRequest) returns (HomeStatResponse) {
+		option (google.api.http) = {
+			get: "/v1/driver/homeStat"
+		};
+	}
+
+	// 司机出车
+	rpc Depart (DriverDepartRequest) returns (DriverDepartResponse) {
+		option (google.api.http) = {
+			post: "/v1/driver/depart"
+			body: "*"
+		};
+	}
+
+	// 司机接单
+	rpc AcceptOrder (DriverAcceptOrderRequest) returns (DriverAcceptOrderResponse) {
+		option (google.api.http) = {
+			post: "/v1/driver/acceptOrder"
+			body: "*"
+		};
+	}
+
+}
+
+//司机短信发送请求
+message DriverSendSmsRequest{
+	string mobile=1;//手机号码
+	string source=2;//验证码
+}
+
+//司机短信发送响应
+message DriverSendSmsResponse{
+	int64 code=1;//响应状态码
+	string message=2;//响应消息
+}
+
+//司机登录注册一体化请求
+message DriverLoginRequest{
+	string mobile=1;//手机号码
+	string source=2;//验证码
+}
+
+//司机登录注册一体化响应
+message DriverLoginResponse{
+	int64 code=1;//响应状态码
+	string message=2;//响应消息
+}
+
+//完善司机信息请求
+message UpdateDriverRequest{
+	int64 id=1;//司机信息记录ID
+	int64 user_id=2;//用户ID
+	string driver_name=3;//司机姓名
+	string driver_license=4;//驾驶证号
+	string vehicle_license=5;//行驶证号
+	string vehicle_type=6;//车辆类型
+	int64 application_status=7;//申请状态：1-待审核，2-审核通过，3-审核拒绝
+	string reject_reason=8;//拒绝原因
+	int64 auditor_id=9;//审核人ID
+	int64 driver_id = 10;
+}
+
+//完善司机信息响应
+message UpdateDriverResponse{
+	int64 code=1;//响应状态码
+	string message=2;//响应消息
+}
+
+// 司机实名认证请求
+message RealNameRequest {
+  int64 driver_id = 1;      // 司机ID
+  string real_name = 2;     // 真实姓名
+  string id_card = 3;       // 身份证号
+}
+
+// 司机实名认证响应
+message RealNameResponse {
+  int64 code = 1;           // 状态码
+  string message = 2;       // 提示信息
+}
+
+// 首页统计数据请求
+message HomeStatRequest {
+  int64 driver_id = 1; // 司机ID
+}
+
+// 首页统计数据响应
+message HomeStatResponse {
+  double today_income = 1;      // 今日收益
+  double avg_income = 2;        // 近7天平均收益
+  int32 remain_order_count = 3; // 剩余拒单次数
+  double week_success_rate = 4; // 七日成单率（百分比，0~100）
+  int64 code = 5;               // 状态码
+  string message = 6;           // 提示信息
+}
+
+// 司机出车请求
+message DriverDepartRequest {
+  int64 driver_id = 1; // 司机ID
+  int64 vehicle_id = 2; // 车辆ID
+  double latitude = 3; // 纬度
+  double longitude = 4; // 经度
+  string city = 5; // 城市
+}
+
+// 司机出车响应
+message DriverDepartResponse {
+  int64 code = 1; // 状态码
+  string message = 2; // 提示信息
+}
+
+// 司机接单请求
+message DriverAcceptOrderRequest {
+  int64 order_id = 1; // 订单ID
+  int64 driver_id = 2; // 司机ID
+  double driver_latitude = 3; // 司机纬度
+  double driver_longitude = 4; // 司机经度
+  string car_type = 5; // 司机车型
+}
+
+// 司机接单响应
+message DriverAcceptOrderResponse {
+  int64 code = 1; // 状态码
+  string message = 2; // 提示信息
+}
+

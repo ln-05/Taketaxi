@@ -1,0 +1,361 @@
+# Generated with protoc-gen-openapi
+# https://github.com/google/gnostic/tree/master/cmd/protoc-gen-openapi
+
+openapi: 3.0.3
+info:
+    title: Driver API
+    description: 司机服务
+    version: 0.0.1
+paths:
+    /v1/driver/acceptOrder:
+        post:
+            tags:
+                - Driver
+            description: 司机接单
+            operationId: Driver_AcceptOrder
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/DriverAcceptOrderRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/DriverAcceptOrderResponse'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+    /v1/driver/depart:
+        post:
+            tags:
+                - Driver
+            description: 司机出车
+            operationId: Driver_Depart
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/DriverDepartRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/DriverDepartResponse'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+    /v1/driver/homeStat:
+        get:
+            tags:
+                - Driver
+            description: 首页统计数据请求
+            operationId: Driver_HomeStat
+            parameters:
+                - name: driverId
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/HomeStatResponse'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+    /v1/driver/login:
+        post:
+            tags:
+                - Driver
+            description: 登录注册一体化
+            operationId: Driver_Login
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/DriverLoginRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/DriverLoginResponse'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+    /v1/driver/realName:
+        post:
+            tags:
+                - Driver
+            description: 司机实名认证请求
+            operationId: Driver_RealName
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/RealNameRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/RealNameResponse'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+    /v1/driver/sendSms:
+        post:
+            tags:
+                - Driver
+            description: 短信发送
+            operationId: Driver_SendSms
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/DriverSendSmsRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/DriverSendSmsResponse'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+    /v1/driver/update:
+        post:
+            tags:
+                - Driver
+            description: 完善信息
+            operationId: Driver_Update
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/UpdateDriverRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/UpdateDriverResponse'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+components:
+    schemas:
+        DriverAcceptOrderRequest:
+            type: object
+            properties:
+                orderId:
+                    type: string
+                driverId:
+                    type: string
+                driverLatitude:
+                    type: number
+                    format: double
+                driverLongitude:
+                    type: number
+                    format: double
+                carType:
+                    type: string
+            description: 司机接单请求
+        DriverAcceptOrderResponse:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+            description: 司机接单响应
+        DriverDepartRequest:
+            type: object
+            properties:
+                driverId:
+                    type: string
+                vehicleId:
+                    type: string
+                latitude:
+                    type: number
+                    format: double
+                longitude:
+                    type: number
+                    format: double
+                city:
+                    type: string
+            description: 司机出车请求
+        DriverDepartResponse:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+            description: 司机出车响应
+        DriverLoginRequest:
+            type: object
+            properties:
+                mobile:
+                    type: string
+                source:
+                    type: string
+            description: 司机登录注册一体化请求
+        DriverLoginResponse:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+            description: 司机登录注册一体化响应
+        DriverSendSmsRequest:
+            type: object
+            properties:
+                mobile:
+                    type: string
+                source:
+                    type: string
+            description: 司机短信发送请求
+        DriverSendSmsResponse:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+            description: 司机短信发送响应
+        GoogleProtobufAny:
+            type: object
+            properties:
+                '@type':
+                    type: string
+                    description: The type of the serialized message.
+            additionalProperties: true
+            description: Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
+        HomeStatResponse:
+            type: object
+            properties:
+                todayIncome:
+                    type: number
+                    format: double
+                avgIncome:
+                    type: number
+                    format: double
+                remainOrderCount:
+                    type: integer
+                    format: int32
+                weekSuccessRate:
+                    type: number
+                    format: double
+                code:
+                    type: string
+                message:
+                    type: string
+            description: 首页统计数据响应
+        RealNameRequest:
+            type: object
+            properties:
+                driverId:
+                    type: string
+                realName:
+                    type: string
+                idCard:
+                    type: string
+            description: 司机实名认证请求
+        RealNameResponse:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+            description: 司机实名认证响应
+        Status:
+            type: object
+            properties:
+                code:
+                    type: integer
+                    description: The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
+                    format: int32
+                message:
+                    type: string
+                    description: A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][google.rpc.Status.details] field, or localized by the client.
+                details:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/GoogleProtobufAny'
+                    description: A list of messages that carry the error details.  There is a common set of message types for APIs to use.
+            description: 'The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).'
+        UpdateDriverRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                userId:
+                    type: string
+                driverName:
+                    type: string
+                driverLicense:
+                    type: string
+                vehicleLicense:
+                    type: string
+                vehicleType:
+                    type: string
+                applicationStatus:
+                    type: string
+                rejectReason:
+                    type: string
+                auditorId:
+                    type: string
+                driverId:
+                    type: string
+            description: 完善司机信息请求
+        UpdateDriverResponse:
+            type: object
+            properties:
+                code:
+                    type: string
+                message:
+                    type: string
+            description: 完善司机信息响应
+tags:
+    - name: Driver

@@ -1,0 +1,16 @@
+server:
+  http:
+    addr: 0.0.0.0:8000
+    timeout: 1s
+  grpc:
+    addr: 0.0.0.0:9000
+    timeout: 1s
+data:
+  database:
+    driver: mysql
+    source: root:ae18a618f2bec0834cd76a6bb4c4aa36@tcp(14.103.143.155:3306)/school?parseTime=True&loc=Local
+  redis:
+    addr: 14.103.143.155:6379
+    password: "ae18a618f2bec0834cd76a6bb4c4aa36"
+    read_timeout: 200ms
+    write_timeout: 200ms

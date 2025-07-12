@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package helloworld.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "helloworld/api/helloworld/v1;v1";
+option java_multiple_files = true;
+option java_package = "dev.kratos.api.helloworld.v1";
+option java_outer_classname = "HelloworldProtoV1";
+
+// 问候服务定义
+service Greeter {
+  // 发送问候消息
+  rpc SayHello (HelloRequest) returns (HelloReply) {
+    option (google.api.http) = {
+      get: "/helloworld/{name}"
+    };
+  }
+}
+
+// 包含用户姓名的请求消息
+message HelloRequest {
+  string name = 1;//用户姓名
+}
+
+// 包含问候语的响应消息
+message HelloReply {
+  string message = 1;//问候消息内容
+}

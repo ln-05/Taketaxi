@@ -1,0 +1,207 @@
+syntax = "proto3";
+
+package api.helloworld.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "helloworld/api/helloworld/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.helloworld.v1";
+
+//用户服务
+service User {
+	//短信验证
+	rpc SendSms (UserSendSmsRequest) returns (UserSendSmsResponse) {
+		option (google.api.http) = {
+			post: "/v1/user/sendSms"
+			body: "*"
+		};
+	}
+
+	//登录注册一体化
+	rpc Login (UserLoginRequest) returns (UserLoginResponse) {
+		option (google.api.http) = {
+			post: "/v1/user/login"
+			body: "*"
+		};
+	}
+
+	//完善信息
+	rpc Update (UserUpdateRequest) returns (UserUpdateResponse) {
+		option (google.api.http) = {
+			post: "/v1/user/update"
+			body: "*"
+		};
+	}
+
+  //获取当前位置
+  rpc GetCurrentLocation (GetCurrentLocationRequest) returns (GetCurrentLocationResponse) {
+    option (google.api.http) = {
+      get: "/v1/user/currentLocation"
+    };
+  }
+
+
+  //搜索历史
+  rpc UserSearch (UserSearchRequest) returns (UserSearchResponse) {
+    option (google.api.http) = {
+      post: "/v1/user/userSearch"
+      body: "*"
+    };
+  }
+
+  //创建行程
+  rpc CreateTrip (CreateTripRequest) returns (CreateTripResponse) {
+    option (google.api.http) = {
+      post: "/v1/user/trip"
+      body: "*"
+    };
+  }
+  
+	//用户叫车
+	rpc CreateUserOrder (CreateUserOrderRequest) returns (CreateUserOrderResponse) {
+		option (google.api.http) = {
+			post: "/v1/order/userOrder"
+			body: "*"
+		};
+	}
+
+	//司机评价
+	rpc CommentDriver (UserCommentDriverRequest) returns (UserCommentDriverResponse) {
+		option (google.api.http) = {
+			post: "/v1/user/comment"
+			body: "*"
+		};
+	}
+
+}
+
+//短信验证请求
+message UserSendSmsRequest{
+	string mobile=1;//手机号码
+	string source=2;//验证码
+}
+
+//短信验证响应
+message UserSendSmsResponse{
+	int64 code=1;//响应状态码
+	string message=2;//响应消息
+}
+
+//登录注册一体化请求
+message UserLoginRequest{
+	string mobile=1;//手机号码
+	string source=2;//验证码
+}
+
+//登录注册一体化响应
+message UserLoginResponse{
+	int64 code=1;//响应状态码
+	string message=2;//响应消息
+}
+
+// 完善用户信息请求
+message UserUpdateRequest {
+  int64 id = 1;//用户ID
+  string mobile = 2;//手机号码
+  string user_name = 3;//用户名
+  string nick_name = 4;//昵称
+  string id_card = 5;//身份证号
+  string sex = 6;//性别
+  string mileage = 7;//里程数
+}
+
+// 完善用户信息响应
+message UserUpdateResponse {
+  int64 code = 1;//响应状态码
+  string message = 2;//响应消息
+
+}
+
+
+//搜索历史请求
+message UserSearchRequest{
+  int64 user_id=1;//用户ID
+  string keyword=2;//搜索关键词
+  string search_time=3;//搜索时间
+}
+
+//搜索历史响应
+message UserSearchResponse{
+  int64 code=1;//响应状态码
+  string message=2;//响应消息
+}
+
+// 用户叫车请求
+message CreateUserOrderRequest {
+  int64 passenger_id = 1;//乘客ID
+  string order_code = 2;//订单编号
+  double amount = 3;//订单金额
+  string order_status = 4;//订单状态
+  string start_addr = 5;//起始地址
+  string end_end = 6;//目的地地址
+  int64 driver = 7;//司机ID
+  string start_time = 8;//开始时间
+  string end_time = 9;//结束时间
+  string pay_status = 10;//支付状态
+  string pay_type = 11;//支付方式
+  string order_type = 12;//订单类型
+}
+
+// 用户叫车响应
+message CreateUserOrderResponse {
+  int64 code = 1;//响应状态码
+  string message = 2;//响应消息
+}
+
+
+// 评价司机请求
+message UserCommentDriverRequest {
+  int64 passenger_id = 1;//乘客ID
+  int64 order_id = 2;//订单ID
+  int64 driver_id = 3;//司机ID
+  int64 score = 4;//评分（1-5分）
+  string content = 5;//评价内容
+}
+
+// 评价司机响应
+message UserCommentDriverResponse {
+  int64 code = 1;//响应状态码
+  string message = 2;//响应消息
+}
+
+// 创建行程请求
+message CreateTripRequest {
+  string user_id = 1;//用户ID
+  string start_location = 2;//起点
+  string end_location = 3;//终点
+  string car_type = 4;//车型（如 economy, comfort, luxury）
+}
+
+// 创建行程响应
+message CreateTripResponse {
+  string trip_id = 1;//行程ID
+  double price = 2;//预估费用
+  string car_type = 3;//车型
+  string message = 4;//结果描述
+  int64 code = 5;//响应状态码
+}
+
+// 获取当前位置请求
+message GetCurrentLocationRequest {
+  string user_id = 1;//用户ID
+  string baidu_ak = 2;//百度地图API密钥
+}
+
+// 获取当前位置响应
+message GetCurrentLocationResponse {
+  double latitude = 1;//纬度
+  double longitude = 2;//经度
+  string address = 3;//详细地址
+  string city = 4;//城市
+  string province = 5;//省份
+  string district = 6;//区县
+  int64 code = 7;//响应状态码
+  string message = 8;//响应消息
+}
+
